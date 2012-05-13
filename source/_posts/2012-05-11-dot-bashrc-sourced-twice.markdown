@@ -35,3 +35,9 @@ categories:
 
 [tmux]: http://tmux.sourceforge.net/
 [perlbrew]: http://perlbrew.pl/
+
+**Update** 2012-05-13
+
+為了避免 `~/bin` 和 `$HOME/bin` 混用，所以改了一下 script
+
+    export PATH=$HOME/bin:"$(perl -e 'print join ":", grep { $_ ne "$ENV{HOME}/bin" && $_ ne "~/bin" } split/:/, $ENV{PATH};')"
