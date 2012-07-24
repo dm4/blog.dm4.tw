@@ -94,6 +94,25 @@ nmap 完之後發現有開 ftp ，查了一下發現有 [Serv-U FTP Jail Break](
 和 hint 一模一樣應該就是它了吧 XD 不過那時候肚子太餓又找不到怎麼登入 ftp ，把連結跟 atdog 說了之後我就出去吃點心，
 回來之後就被解掉了，id/pw 好像就是 `hitcon2012/hitcon2012` ，隊友好強啊！
 
+關鍵是 `Plz Input "Your" Real ID:` 要用 `wargame.hitcon.org` 的帳號去 generate key.txt 接下來就：
+
+    [~] ➟  ftp jumpochisun.blogsyte.com
+    Connected to jumpochisun.blogsyte.com.
+    220 Serv-U FTP Server v6.4 for WinSock ready...
+    Name (jumpochisun.blogsyte.com:dm4): hitcon2012
+    331 User name okay, need password.
+    Password: 
+    230 User logged in, proceed.
+    Remote system type is UNIX.
+    Using binary mode to transfer files.
+    ftp> get ..:/..:/..:/..:/key/dm4key.txt key.txt
+    local: key.txt remote: ..:/..:/..:/..:/key/dm4key.txt
+    227 Entering Passive Mode (114,36,241,246,15,231)
+    150 Opening BINARY mode data connection for dm4key.txt (28 Bytes).
+    100% |**************************************************|    28      179.89 KiB/s    00:00 ETA
+    226 Transfer complete.
+    28 bytes received in 00:00 (0.80 KiB/s)
+
 
 
 剩下的時間都在試著解 Web 5 ，以及一直看 [駭客觀察日記](http://www.youtube.com/watch?v=l2dvg3KJoPo)
