@@ -10,6 +10,7 @@ categories:
 - hack
 - web
 - wargame
+- security
 ---
 
 今年是第二年來 HITCON ，去年感謝 atdog 大大帶我一起報名 HITCON 玩 wargame ，
