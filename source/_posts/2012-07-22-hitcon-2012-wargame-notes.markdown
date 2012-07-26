@@ -15,7 +15,7 @@ categories:
 今年是第二年來 HITCON ，去年感謝 atdog 大大帶我一起報名 HITCON 玩 wargame ，
 本來想說和去年一樣解解 QR code 我就很開心了，沒想到今年運氣不錯 XD
 
-感謝同隊 crax 的組員： atdog, xman, jeffxx, lence, 還有不知道名字的兩個學弟學妹！
+感謝同隊 crax 的組員： atdog xman jeffxx cyen hliu kvchung
 
 Wargame 題目有大大幫忙備分了：[HITCON 2012 Wargame](http://rsghost.org/backup/wargame.hitcon.org/)
 
@@ -90,7 +90,7 @@ Wargame 題目有大大幫忙備分了：[HITCON 2012 Wargame](http://rsghost.or
 
 ### Potent Pwnables 2
 
-nmap 完之後發現有開 ftp ，查了一下發現有 [Serv-U FTP Jail Break](http://www.exploit-db.com/exploits/18182/)
+`nmap` 完之後發現有開 ftp ，查了一下發現有 [Serv-U FTP Jail Break](http://www.exploit-db.com/exploits/18182/)
 和 hint 一模一樣應該就是它了吧 XD 不過那時候肚子太餓又找不到怎麼登入 ftp ，把連結跟 atdog 說了之後我就出去吃點心，
 回來之後就被解掉了，id/pw 好像就是 `hitcon2012/hitcon2012` ，隊友好強啊！
 
