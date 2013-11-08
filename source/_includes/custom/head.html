@@ -11,12 +11,3 @@
 <meta property="og:image" content="http://www.gravatar.com/avatar/1b0b7bab4c837d80e1b110bd7127a0d8?s=200" />
 <meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}" />
 {% endif %}
-{% if site.twitter_user %}
-<meta property="twitter:card" content="{% if page.twitter_card.type %}{{ page.twitter_card.type}}{% else %}summary{% endif %}" />
-<meta property="twitter:site" content="{{ site.twitter_user }}" />
-<meta property="twitter:url" content="{% if canonical %}{{ canonical }}{% else %}{{ site.url }}{% endif %}" />
-<meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-<meta property="twitter:description" content="{{ description | strip_html | condense_spaces | truncate:200 }}" />
-<meta property="twitter:creator" content="{% if page.twitter_card.creator %}{{ page.twitter_card.creator }}{% else %}{{ site.twitter_user }}{% endif %}" />
-{% if page.twitter_card.image %}<meta property="twitter:image:src" content="{{ page.twitter_card.image }}" />{% endif %}
-{% endif %}
