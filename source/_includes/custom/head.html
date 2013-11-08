@@ -10,6 +10,7 @@
 <meta property="og:description" content="{{ description | strip_html | condense_spaces | truncate:200 }}" />
 <meta property="og:author" content="{{ site.facebook_page }}" />
 <meta property="og:image" content="http://www.gravatar.com/avatar/1b0b7bab4c837d80e1b110bd7127a0d8?s=200" />
+<meta property="og:type" content="{% if layout == 'post' %}article{% else %}blog{% endif %}" />
 {% endif %}
 {% if site.twitter_user %}
 <meta property="twitter:card" content="{% if page.twitter_card.type %}{{ page.twitter_card.type}}{% else %}summary{% endif %}" />
