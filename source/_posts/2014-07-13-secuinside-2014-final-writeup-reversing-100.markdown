@@ -3,7 +3,7 @@ layout: post
 title: SECUINSIDE CTF Finals 2014 Writeup - Reversing 100
 date: 2014-07-13 15:54
 comments: true
-categories: 
+categories: [ctf, writeup]
 ---
 
 這題在現場沒解完...因為覺得應該只差一點點，回來之後果然弄出來了啊！
