@@ -51,7 +51,42 @@ vim Makefile
 KEYMAP_IN_EEPROM_ENABLE = yes # Read keymap from eeprom
 ```
 
-接下來就插上鍵盤，按一下背面的按鈕，直接試刷預設的 poker layout 看看
+接下來就插上鍵盤， OSX 應該會抓到一隻 GH60 ，可以用 `system_profiler SPUSBDataType` 指令檢查一下
+
+```
+(master) [~/workspace/tmk_keyboard_custom/keyboard/gh60] ➟  system_profiler SPUSBDataType
+...
+GH60:
+
+  Product ID: 0x6060
+  Vendor ID: 0xfeed
+  Version:  0.01
+  Speed: Up to 12 Mb/sec
+  Manufacturer: geekhack
+  Location ID: 0x14100000 / 15
+  Current Available (mA): 500
+  Current Required (mA): 100
+```
+
+按一下背面的按鈕會進入 dfu 模式，這時候 OSX 應該會抓到一個 Atmel 的設備
+
+```
+(master) [~/workspace/tmk_keyboard_custom/keyboard/gh60] ➟  system_profiler SPUSBDataType
+...
+ATm32U4DFU:
+
+  Product ID: 0x2ff4
+  Vendor ID: 0x03eb  (Atmel Corporation)
+  Version:  0.00
+  Serial Number: 1.0.0
+  Speed: Up to 12 Mb/sec
+  Manufacturer: ATMEL
+  Location ID: 0x14100000 / 16
+  Current Available (mA): 500
+  Current Required (mA): Unknown (Device has not been configured)
+```
+
+然後就可以直接試刷預設的 poker layout 看看
 
 ```
 make dfu
