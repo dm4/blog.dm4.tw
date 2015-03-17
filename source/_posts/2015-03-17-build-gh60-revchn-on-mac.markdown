@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "在 Mac OSX 上編譯 GH60 RevCHN firmware"
+title: "在 Mac OSX 上編譯 GH60 RevCHN Firmware"
 date: 2015-03-17 22:49
 comments: true
 categories: [keyboard, gh60]
