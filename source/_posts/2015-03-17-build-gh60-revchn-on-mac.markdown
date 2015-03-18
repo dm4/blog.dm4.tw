@@ -18,7 +18,7 @@ categories: [keyboard, gh60]
 
 根據 http://www.v2ex.com/t/161887 首先要先用 brew 裝crosspack 和 dfu-programmer ，不過因為時間過太久，有點忘記詳細的安裝指令， crosspack 需要 `brew tap` 的樣子。
 
-裝完之後可以來載 source ，因為 [tmk/tmk_keyboard] 不支援 RevCHN ，所以要用 [kairyu/tmk_keyboard_custom][tmk_keyboard_custom]
+裝完之後可以來載 source ，因為 [tmk/tmk_keyboard][tmk_keyboard] 不支援 RevCHN ，所以要用 [kairyu/tmk_keyboard_custom][tmk_keyboard_custom]
 
 ```
 git clone https://github.com/kairyu/tmk_keyboard_custom.git
