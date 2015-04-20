@@ -102,3 +102,6 @@ facebook_like: true
 
 # Facebook Insights / Open Graph
 facebook_app_id: 1360542987
+
+# Tumblr
+tumblr_button: true
