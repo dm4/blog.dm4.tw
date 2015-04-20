@@ -7,9 +7,19 @@
 .gist-meta a[href*='#file'] {
   right:0px !important;
 }
-// #twitter-widget-0 {
-//   width: 90px !important;
-// }
+
+// twitter_sharing
+#twitter-widget-0 {
+  width: 90px !important;
+}
+
+// facebook_like
 .fb_iframe_widget span {
     vertical-align: baseline !important;
+}
+
+// tumblr_button
+iframe[seamless] {
+    display: inline;
+    width: 90px;
 }
