@@ -6,7 +6,9 @@ tags: [ctf, writeup]
 
 這題在現場沒解完...因為覺得應該只差一點點，回來之後果然弄出來了啊！
 
-``` text wooyaggo's field https://ctftime.org/task/1174
+```text
+wooyaggo's field https://ctftime.org/task/1174
+
 decrypt it and submit 4th line(without last character 0x0a)
 
 platin text example
@@ -18,14 +20,14 @@ http://dl.ctftime.org/144/1174/enc.txt
 ```
 
 第一個連結載下來之後會發現是一個 zip 檔
-``` text
+```text
 $ file 59a67b2df52c3e0a1330a5952a619462584bba28
 59a67b2df52c3e0a1330a5952a619462584bba28: Zip archive data, at least v1.0 to extract
 ```
 
 看了一下內容，會發現是 iOS App 的結構
 
-``` text
+```text
 $ unzip -l 59a67b2df52c3e0a1330a5952a619462584bba28
 Archive:  59a67b2df52c3e0a1330a5952a619462584bba28
   Length     Date   Time    Name
@@ -58,7 +60,7 @@ Archive:  59a67b2df52c3e0a1330a5952a619462584bba28
 
 用 `otool` 看一下執行檔有沒有被加密
 
-``` text
+```text
 $ otool -l Payload/Inverse.app/Inverse | grep -A5 LC_ENCRYPTION_INFO
           cmd LC_ENCRYPTION_INFO
       cmdsize 20
@@ -88,7 +90,7 @@ Load command 13
 
 把整段用 `ruby` 重寫會長得像
 
-``` ruby
+```ruby
 require 'digest/sha1'
 
 def s(i)
@@ -122,7 +124,7 @@ end
 
 比較討厭的是題目給的 `1. AAA-111-ASRT-3.1-CC[n]` ，真的去試的話會發現用 `1. ` 開頭的 plain 是沒有解的，後面接 `[n]` 也是一樣，所以最後試出來每行的格式應該是像 `[0-9A-Z]{3}-[0-9A-Z]{3}-ASRT-\d\.\d-[0-9A-Z]{2}\n`...解這題的時候因為格式也卡了好久...
 
-``` ruby
+```ruby
 enc = [
   -178, -189, -255, -256, -193, -257, -235, -159, -198, -227,
   -187, -187, -267, -221, -225, -228, -235, -249, -259, -287,
@@ -182,7 +184,7 @@ dfs("", enc)
 
 一共會跑出 34 組，看到 `SEC-` 和 `KOR-` 就覺得應該沒解錯，不過直接用 ruby 跑其實有點久，有時間再來看一下怎麼加速 XD
 
-``` text
+```text
 $ time ruby solve.rb
 "SEC-41A-ASRT-3.1-OK\nKOR-A43-ASRT-9.3-J1\n"
 "SEC-41A-ASRT-3.1-OK\nKOR-A43-ASRT-9.3-J2\n"
@@ -226,7 +228,7 @@ sys     0m3.675s
 
 接下來就對這幾組，看他們的 `hash` 和 `sum == all(hash)` 了
 
-``` ruby
+```ruby
 plains = [
   "SEC-41A-ASRT-3.1-OK\nKOR-A43-ASRT-9.3-J1\n",
   "SEC-41A-ASRT-3.1-OK\nKOR-A43-ASRT-9.3-J2\n",
@@ -287,7 +289,7 @@ decode_hash(plains, enc)
 
 只有兩組符合條件
 
-``` text
+```text
 $ ruby solve.rb
 "011c945f30ce2cbafc452f39840f025693339c42"
 "011c945f30ce2cbafc452f39840f025693339909"
@@ -295,7 +297,7 @@ $ ruby solve.rb
 
 接著就直接用這兩組來解 enc ，看看哪個才是正解！
 
-``` ruby
+```ruby
 def es_hash(enc, hash)
   output = ""
   sum  = all(hash)
@@ -313,7 +315,7 @@ p es_hash(enc, "011c945f30ce2cbafc452f39840f025693339909") # error
 
 用第一個 `hash` 可以成功還原 `plain`
 
-``` text
+```text
 $ ruby solve.rb
 "SEC-41A-ASRT-3.1-OK\nKOR-A43-ASRT-9.3-KO\nCOV-718-ASRT-7.9-QE\nCON-C1D-ASRT-1.1-CO\nCOM-ICQ-ASRT-1.9-KR\nLSA-IQ1-ASRT-3.0-KR\nAES-JOO-ASRT-9.9-KR\n"
 ```

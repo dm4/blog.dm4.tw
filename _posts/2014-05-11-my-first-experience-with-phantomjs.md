@@ -10,7 +10,7 @@ tags: [phantomjs, javascript, nodejs]
 
 官網的 [Quick Start](http://phantomjs.org/quick-start.html) 寫的蠻清楚的， [Examples](http://phantomjs.org/examples/index.html) 也有很多範例可以參考，我自己用到的功能只有連線一個網頁後，對網頁的 `document` 作操作，然後把結果印出來，下面這段簡單的 code 就是連上 <http://blog.dm4.tw> 首頁，拿到最新一篇文章的標題，印出標題之後截圖：
 
-``` javascript
+```javascript
 var page = require('webpage').create();
 
 page.open('http://blog.dm4.tw', function() {
@@ -27,7 +27,7 @@ page.open('http://blog.dm4.tw', function() {
 
 可以用 <https://github.com/Medium/phantomjs> ，裡面也有提到怎麼用 `node` 跑起來：
 
-``` javascript
+```javascript
 var path = require('path')
 var childProcess = require('child_process')
 var phantomjs = require('phantomjs')
@@ -59,7 +59,7 @@ childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
 
 有些 https 網頁憑證沒設好，預設很貼心把它擋下來了，如果要打開的話，執行時要加上參數 `phantomjs --ignore-ssl-errors=true` ，如果是用 `node` 跑的話是要加在 arguments 裡：
 
-``` javascript
+```javascript
 var childArgs = [
   '--ignore-ssl-errors=true',
   path.join(__dirname, 'phantomjs-script.js'),
