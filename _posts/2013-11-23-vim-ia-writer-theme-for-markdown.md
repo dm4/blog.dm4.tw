@@ -13,7 +13,7 @@ tags: [vim]
 
 Screenshot:
 
-![screenshot](https://dl.dropboxusercontent.com/u/158785/blog/2013-11-23-screenshot.png)
+![screenshot](/assets/images/2013-11-23-screenshot.png)
 
 [1]: http://astrails.com/blog/2013/8/12/writing-markdown-with-style-in-vim
 [2]: https://github.com/dm4/vim-writer
