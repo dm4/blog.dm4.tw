@@ -6,7 +6,7 @@ tags: [hardware]
 
 最近把拿來架伺服器的 [ASUS PN51][] 搬進書房之後，發現負載稍微大一點的時候風扇聲有點惱人，於是就想說來換個無風扇的散熱機殼。選擇的是 Asaka 出的 [Newton A50][] ，不過其實我本來是覺得 [Turing A50 MKII][] 比較好看，不過不知道是不是絕版了？找了 Amazon 發現買不到，所以就換成 [Newton A50][] ，後來覺得 [Newton A50][] 也還不錯，畢竟對寸土寸金的書房來說 [Turing A50 MKII][] 可能還是稍大了一點。
 
-換殼的時間絕大部份都是在拆原本的機殼，主要是參考了下面兩個連結：
+換殼的大部份時間都是在拆原本的機殼，主要是參考下面兩個連結：
 
 - <https://linustechtips.com/topic/1271386-asus-pn50-ryzen-3-4300u-teardown/>
 
@@ -18,12 +18,11 @@ tags: [hardware]
 
 - 在開始拆之前可以先進 BIOS 把 CPU FAN 調成 Ignore ，畢竟裝完之後可能手忙腳亂的，這時候還要找線找鍵盤有點麻煩。
 
-- 原本機殼上的兩片小 PCB 是一定要拆下來的，本來我是想說能不能就留著不要破壞，不過 PCB 的接頭會卡住主機板，最後要把主機板拿出來的時候發現還是得拆，
-不過因為只是用膠帶黏的所以很好拆。
+- 原本機殼上的兩片小 PCB 是一定要拆下來的，本來我是想說能不能就留著不要破壞，不過 PCB 的接頭會卡住主機板，最後要把主機板拿出來的時候發現還是得拆，不過因為只是用膠帶黏的所以很好拆。
 
-- [Newton A50] 沒有附 Wifi 天線，需要 Wifi 需要自己買， Wifi 天線的安裝說明要另在上官網找。（在 [這裡](https://akasa.co.uk/download/manual/FittingHoles_installation.pdf) ）
+- [Newton A50] 沒有附 Wifi 天線，需要 Wifi 的話需要自己買， Wifi 天線的安裝說明要另外在上官網找，機殼附的說明書並沒有這一部份。（在 [這裡](https://akasa.co.uk/download/manual/FittingHoles_installation.pdf) ）
 
-- [Newton A50] 後面的一些開孔總覺得有點誤差，不過實際用起來是不影響插線的。
+- [Newton A50] 後面的一些開孔總覺得有點誤差，不過實際用起來是不影響插線。
 
 - 裝完之後待機 CPU 溫度有降低了，負載時的溫度上升也有變好。
 
