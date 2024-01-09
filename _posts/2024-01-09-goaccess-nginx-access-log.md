@@ -30,11 +30,17 @@ docker run -d \
     --persist
 ```
 
+跑起來的樣子：
+
+![](/assets/images/2024-01-09/screenshot.png)
+
 其中特別處理的地方有：
 
 - `-e TZ=Asia/Taipei` 是為了讓 [GoAccess][] 生出來的 html 報表的時間是 `Asi/Taipei` 的時區，不然預設會是 `UTC+0` 。
 
 - 因為 Nginx 有做 log rotate，所以這裡直接把 `/var/log/nginx` 用 read-only 掛進去， [GoAccess] 會自己去讀取新的 access log 。
+
+- 用 `-u 33` 是因為 log rotate 預設的權限是 `create 0640 www-data adm` ，要讓 container 裡也能讀到 log 所以把 uid 設成和 `www-data` 一樣。
 
 - 有用了 `--persist` / `--restore` ，這樣在 container 重啟之後也可以保留歷史資料，不這麼做的話就只能看到最新的 access log ，或是把舊的 log file 也加在參數裡去讓 [GoAccess][] 重新 parse 。
 
@@ -64,6 +70,8 @@ server {
 ```
 
 [GoAccess] 還有支援 `--geoip-database` 選項，看起來能在 html 裡面顯示 IP 的地理位置，之後有空再來試試。
+
+**UPDATE** 試了 `--geoip-database` ，真的就是載下來給檔案路徑就好，也發現 [wp-statistics/GeoLite2-City](https://github.com/wp-statistics/GeoLite2-City) 有下載連結。
 
 [GoAccess]: https://goaccess.io/
 [Manual]: https://goaccess.io/man
