@@ -25,8 +25,6 @@ title: "VSCode 的 #ifdef 套色"
 
 ![C/C++ IntelliSense](/assets/images/2024-01-24/c-cpp-edit-ui.png)
 
-![C/C++ IntelliSense](/assets/images/2024-01-24/compile-commands.png)
-
 或是也可以直接新增 `.vscode/c_cpp_properties.json` ，內容可以參考 [Configure C/C++ IntelliSense](https://code.visualstudio.com/docs/cpp/configure-intellisense) 和 [c_cpp_properties.json reference](https://code.visualstudio.com/docs/cpp/c-cpp-properties-schema-reference) ，主要就是要設定 `"compileCommands": "${workspaceFolder}/build/compile_commands.json"` 。
 
 設定好之後要想辦法產生 `compile_commands.json` ，如果是用 CMake 的話就是直接加上 `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON` ，可以參考 [CMAKE_EXPORT_COMPILE_COMMANDS](https://cmake.org/cmake/help/latest/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html) 。
