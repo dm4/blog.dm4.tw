@@ -1,0 +1,12 @@
+---
+# Add custom CSS under the original `core.scss` file.
+---
+
+@import 'main';
+@import 'syntax';
+
+// Custom CSS
+img {
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
