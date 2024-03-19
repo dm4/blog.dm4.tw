@@ -73,6 +73,6 @@ if __name__ == "__main__":
 
 ---
 
-**Update:** 後來又用 `InlineKeyboardMarkup` 加了一個按鈕，按下去之後可以直接拿處理完的文字訊息當作問題，拿去問 `gpt4-turbo-preview` ，用起來長這樣：
+**Update:** 後來又用 `InlineKeyboardMarkup` 加了一個按鈕，按下去之後可以直接拿處理完的文字訊息當作問題，拿去問 `gpt-4-turbo-preview` ，用起來長這樣：
 
 ![](/assets/images/2024-03-15/ask-ai.png)
