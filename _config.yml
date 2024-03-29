@@ -3,7 +3,8 @@ author: dm4
 
 # for the-plain theme
 author_name: dm4
-logo_url: https://s.gravatar.com/avatar/1b0b7bab4c837d80e1b110bd7127a0d8?s=320
+logo_url: https://s.gravatar.com/avatar/1b0b7bab4c837d80e1b110bd7127a0d8?s=750
+social_share_previews: true
 
 plugins:
   - jekyll-remote-theme
