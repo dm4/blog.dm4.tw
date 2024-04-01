@@ -2,6 +2,7 @@
 layout: post
 title: "Unifi USW Flex Mini DHCP Option 43 Adoption"
 tags: []
+redirect_from: /2024/02/16/unifi-usw-flex-mini-dhcp-option-43-adoption.html
 ---
 
 因為買了 Flex Mini 之後發現沒辦法 ssh 進去 set-inform 來讓 controller 接管，所以先研究了一下 L2 Discover ，但是因為我 controller 開在 container 的 bridge network 裡，所以沒辦法用 L2 Discover （我猜用 host network 應該可以，不過沒實驗過），只好嘗試使用 DHCP Option 43 來接管裝置。

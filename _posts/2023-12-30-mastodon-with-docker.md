@@ -2,6 +2,7 @@
 layout: post
 title: "用 Docker 架設 Mastodon"
 tags: [docker]
+redirect_from: /2023/12/30/mastodon-with-docker.html
 ---
 
 之前就一直想試試看 [Mastodon](https://joinmastodon.org/) ，最近有空成功用 Docker 跑起來，其實滿容易的，網路上也可以找到詳細的教學，主要就是用 [官方提供的 docker-compose.yml](https://github.com/mastodon/mastodon/blob/main/docker-compose.yml) 來執行。

@@ -2,6 +2,7 @@
 layout: post
 title: SECUINSIDE CTF Finals 2014 Writeup - Reversing 100
 tags: [ctf, writeup]
+redirect_from: /2014/07/13/secuinside-2014-final-writeup-reversing-100.html
 ---
 
 這題在現場沒解完...因為覺得應該只差一點點，回來之後果然弄出來了啊！

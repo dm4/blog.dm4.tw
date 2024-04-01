@@ -5,6 +5,7 @@ tags:
 - shellscript
 - bash
 - linux
+redirect_from: /2012/05/10/and-in-shell-script.html
 ---
 
 終於搞懂在 shell script 裡 `[ ... ]` 和 `[[ ... ]]` 的差別了

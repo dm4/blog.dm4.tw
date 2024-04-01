@@ -2,6 +2,7 @@
 layout: post
 title: "用 iTerm2 的 Command Composer 取代 ShellGPT"
 tags: []
+redirect_from: /2024/02/27/replace-shellgpt-with-iterm2-command-composer.html
 ---
 
 在這個到處都是 AI 的年代，不管用 VSCode 或是 Vim 都有超讚的 GitHub Copilot Extension 可以用，不過在終端機裡想要快速查指令還是沒有找到特別好用的工具。

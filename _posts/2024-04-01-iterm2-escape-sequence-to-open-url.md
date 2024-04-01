@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "用 iTerm2 的 Escape Sequence 來開啟網頁"
+redirect_from: /2024/04/01/iterm2-escape-sequence-to-open-url.html
 ---
 
 最近有個困擾了一陣子的問題：在用 [GitHub CLI](https://cli.github.com) 執行 `gh browse` 的時候，總是沒辦法正確的打開瀏覽器。

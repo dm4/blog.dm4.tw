@@ -2,6 +2,7 @@
 layout: post
 title: "用過的記帳軟體們 - 2023 版"
 tags: [software]
+redirect_from: /2023/05/25/personal-finance-software-2023.html
 ---
 
 結果距離[上一篇]({% link _posts/2015-10-11-personal-finance-softwares.md %})已經過了 8 年，

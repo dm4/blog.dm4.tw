@@ -2,6 +2,7 @@
 layout: post
 title: "用過的記帳軟體們"
 tags: [software]
+redirect_from: /2015/10/11/personal-finance-softwares.html
 ---
 
 整理一下自己的記帳歷史 XD 從 2009 到今年 2015 每天記帳也快七年了，一路上也用了不少套軟體：

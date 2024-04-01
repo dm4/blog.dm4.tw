@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "macOS 裡的刪節號"
+redirect_from: /2024/01/08/ellipsis-in-macos.html
 ---
 
 前陣子在試著加 macOS 的快速鍵設定的時候，發現像訊息選單裡 **封鎖成員⋯** / **刪除對話⋯** 之中的刪節號一直打不出來，如圖：

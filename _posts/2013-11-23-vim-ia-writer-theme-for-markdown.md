@@ -2,6 +2,7 @@
 layout: post
 title: "Vim iA Writer Theme for Markdown"
 tags: [vim]
+redirect_from: /2013/11/23/vim-ia-writer-theme-for-markdown.html
 ---
 
 前幾天看到 [Writing Markdown With Style in Vim][1] 在講 vim 的 iA Writer theme

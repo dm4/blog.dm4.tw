@@ -2,6 +2,7 @@
 layout: post
 title: "Maestral (Dropbox Client)"
 tags: [software, git]
+redirect_from: /2023/12/22/maestral-dropbox-client.html
 ---
 
 [Maestral][maestral] 是一個 Dropbox 的第三方跨平台 client ，用了一陣子覺得還不錯，最讚的是還可以擺脫 Dropbox 免費帳戶的三個裝置限制。

@@ -1,3 +1,6 @@
+# for jekyll
+permalink: /:title
+
 # for jekyll-feed
 author: dm4
 
@@ -9,6 +12,7 @@ social_share_previews: true
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
+  - jekyll-redirect-from
 remote_theme: heiswayi/the-plain
 
 # show posts with future date

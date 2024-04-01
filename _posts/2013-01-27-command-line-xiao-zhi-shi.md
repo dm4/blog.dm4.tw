@@ -2,6 +2,7 @@
 layout: post
 title: "Command Line 小知識"
 tags: [linux, unix, cli]
+redirect_from: /2013/01/27/command-line-xiao-zhi-shi.html
 ---
 
 前幾天看了這篇 [To understand the command line...](http://geekblog.oneandoneis2.org/index.php/2012/09/30/to-understand-the-command-line) 覺得蠻有趣的，大概是在說：

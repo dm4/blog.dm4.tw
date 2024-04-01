@@ -2,6 +2,7 @@
 layout: post
 title: "dns-sd &amp; AirPlay / AirTunes"
 tags: [dns-sd, airplay, airtunes]
+redirect_from: /2013/11/08/dns-sd-and-airplay-slash-airtunes.html
 ---
 
 ## Usage

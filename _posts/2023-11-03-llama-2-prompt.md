@@ -2,6 +2,7 @@
 layout: post
 title: "Llama 2 Prompt"
 tags: [ai]
+redirect_from: /2023/11/03/llama-2-prompt.html
 ---
 
 如果不透過任何 wrapper ，直接操作 Llama2 的話，想要做到 system prompt 或是歷史對話的效果，其實是要用特殊的格式來建構 prompt 。

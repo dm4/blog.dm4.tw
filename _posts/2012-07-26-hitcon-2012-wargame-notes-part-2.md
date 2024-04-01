@@ -9,6 +9,7 @@ tags:
 - web
 - wargame
 - security
+redirect_from: /2012/07/26/hitcon-2012-wargame-notes-part-2.html
 ---
 
 ### Web 5

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "First Post"
+redirect_from: /2012/05/08/first-post.html
 ---
 
 聽說很潮來用一下傳說中的 octopress

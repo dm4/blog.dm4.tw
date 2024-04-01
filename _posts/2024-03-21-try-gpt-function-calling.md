@@ -2,6 +2,7 @@
 layout: post
 title: "試用 OpenAI 的 Function Calling API"
 tags: [ai]
+redirect_from: /2024/03/21/try-gpt-function-calling.html
 ---
 
 結果試了一下發現 API 很親切耶，只要多給一個 `tools` 參數就可以了，然後再照著回應裡的 `tool_calls` 來呼叫，再把結果傳回去讓 GPT 來接著回應。

@@ -5,6 +5,7 @@ tags:
 - bash
 - shellscript
 - linux
+redirect_from: /2012/05/11/dot-bashrc-sourced-twice.html
 ---
 
 昨天解決了困擾了一陣子的問題，在 `.bashrc` 裡，如果有改到 `$PATH` ：

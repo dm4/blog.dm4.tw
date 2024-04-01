@@ -2,6 +2,7 @@
 layout: post
 title: "更改 git commit 時間"
 tags: [git]
+redirect_from: /2015/04/19/modify-git-commit-time.html
 ---
 
 最近剛好需要更改 git repo 的 commit time ，研究了一下順便把它記錄下來。

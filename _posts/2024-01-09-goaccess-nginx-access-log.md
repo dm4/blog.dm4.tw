@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "用 GoAccess 視覺化 Nginx Access Log"
+redirect_from: /2024/01/09/goaccess-nginx-access-log.html
 ---
 
 在 [用 Docker 架設 Mastodon](/2023/12/30/mastodon-with-docker.html) 之後，本來想說一樣來把 Nginx 的 access log 丟到 EFK 裡觀察一下狀況，沒想到在我把之前 EFK docker compose 裡的 image 版本升一升之後……就跑不起來了……看起來是遇到各種 ssl / service account token 問題 QQ

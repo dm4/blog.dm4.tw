@@ -5,6 +5,7 @@ tags:
 - firefox
 - extension
 - hackbar
+redirect_from: /2012/07/24/firefox-hackbar-font-setting-on-mac-osx.html
 ---
 
 聽說 [HackBar](https://addons.mozilla.org/en-us/firefox/addon/hackbar/) 是 Firefox 下很好用的 extension ，

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "VSCode 的 #ifdef 套色"
+redirect_from: /2024/01/24/vscode-ifdef-dim.html
 ---
 
 在用 VSCode 處理 C/C++ 檔案的時候，如果裝了官方的 C/C++ extension ，會發現 `#ifdef` 預設是沒有套色的，查了一輪資料又再試了一下有找到有幾個方法來解決。

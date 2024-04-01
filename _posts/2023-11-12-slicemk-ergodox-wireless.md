@@ -2,6 +2,7 @@
 layout: post
 title: "SliceMK ErgoDox Wireless 鍵盤"
 tags: [keyboard]
+redirect_from: /2023/11/12/slicemk-ergodox-wireless.html
 ---
 
 之前跟團組了一把 [ErgoDoxTW] 之後，一直想找有沒有無線的版本，但是一直沒有找到，本來有往 [Sofle] 或 [Corne] 去找，不過沒有找到特別合適的賣家，很多都是要買一堆零件和 PCB 自己焊，代組好的又有點超出預算，中間也有想過要不要買 [nice!nano] 之類的主控來換掉原本 [ErgoDoxTW] 上面的 Teensy ，不過對我這個硬體新手來說還是太難了，所以一直沒有下手。

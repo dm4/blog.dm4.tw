@@ -9,6 +9,7 @@ tags:
 - web
 - wargame
 - security
+redirect_from: /2012/07/22/hitcon-2012-wargame-notes.html
 ---
 
 今年是第二年來 HITCON ，去年感謝 atdog 大大帶我一起報名 HITCON 玩 wargame ，

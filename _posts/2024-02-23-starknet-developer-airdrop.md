@@ -2,6 +2,7 @@
 layout: post
 title: "Starknet 的 Developer Airdrop"
 tags: []
+redirect_from: /2024/02/23/starknet-developer-airdrop.html
 ---
 
 最近看到有人分享了因為貢獻 open source 專案而領到 Starknet 的 airdrop ，想說來看一下實際的分配機制是什麼。

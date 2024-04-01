@@ -2,6 +2,7 @@
 layout: post
 title: "PhantomJS 初體驗"
 tags: [phantomjs, javascript, nodejs]
+redirect_from: /2014/05/11/my-first-experience-with-phantomjs.html
 ---
 
 最近因為想要爬個網頁資料，結果礙於處理不了萬惡的 `__VIEWSTATE` 和 `__EVENTVALIDATION` ，在時間的壓力下就決定改用 ggm 推薦 [PhantomJS][1] ，一用之下驚為天人啊，太神了！

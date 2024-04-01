@@ -269,6 +269,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-feed
+  jekyll-redirect-from
   jekyll-remote-theme
   webrick (~> 1.7)
 

@@ -2,6 +2,7 @@
 layout: post
 title: "用 xxd 解 Hex String"
 tags: [linux, xxd]
+redirect_from: /2013/11/08/xxd-decode-hex-string.html
 ---
 
 本來解 hex string 都是用有點醜的 perl one-liner

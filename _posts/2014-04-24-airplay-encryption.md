@@ -2,6 +2,7 @@
 layout: post
 title: "AirPlay Encryption"
 tags: [airplay, crypto]
+redirect_from: /2014/04/24/airplay-encryption.html
 ---
 
 From [iOS Security February 2014](http://images.apple.com/iphone/business/docs/iOS_Security_Feb14.pdf) (p.16)

@@ -2,6 +2,7 @@
 layout: post
 title: "幫 ASUS PN51 換 Asaka Newton A50 散熱機殼"
 tags: [hardware]
+redirect_from: /2023/10/22/asus-pn51-asaka-newton-a50.html
 ---
 
 最近把拿來架伺服器的 [ASUS PN51][] 搬進書房之後，發現負載稍微大一點的時候風扇聲有點惱人，於是就想說來換個無風扇的散熱機殼。選擇的是 Asaka 出的 [Newton A50][] ，不過其實我本來是覺得 [Turing A50 MKII][] 比較好看，不過不知道是不是絕版了？找了 Amazon 發現買不到，所以就換成 [Newton A50][] ，後來覺得 [Newton A50][] 也還不錯，畢竟對寸土寸金的書房來說 [Turing A50 MKII][] 可能還是稍大了一點。
