@@ -69,4 +69,4 @@ printf "\ePtmux;\e\e\e]1337;CursorShape=1\x07\e\\\\"
 
 之前為了取代 ShellGPT 用了 iTerm2 的 command composer [^1] ，現在又多用了 iTerm2 特有的 escape sequence ，感覺用越多好像越容易被綁在 iTerm2 上……這種問題不知道有沒有什麼好的替代方案，不然可能就像 bashrc 越寫越複雜就不想換到 zsh ，或是 vimrc 寫好就不想換到 neovim 一樣…… 😢
 
-[^1]: <https://blog.dm4.tw/2024/02/27/replace-shellgpt-with-iterm2-command-composer.html>
+[^1]: [用 iTerm2 的 Command Composer 取代 ShellGPT](https://blog.dm4.tw/replace-shellgpt-with-iterm2-command-composer)

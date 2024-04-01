@@ -167,7 +167,7 @@ ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,    MINS,EQL, BSPC, \
 
 有一些 Fn action 現在還沒摸熟，看起來可以送 key / macro 的樣子，看到 https://github.com/kairyu/tmk_keyboard_custom/blob/master/keyboard/hhkb/keymap_hasu.c 有一些 function / macro 的用法還沒研究。
 
-另外雖然編起來了，不過因為底層不熟，還不太清楚架構，希望研究一下之後可以把它和藍牙發射器接起來，之前的 [自製 USB 鍵盤轉藍芽鍵盤轉接器](http://blog.dm4.tw/blog/2014/04/22/convert-usb-keyboard-to-bluetooth-keyboard/) 會有點 latency ，不知道如果直接讓 GH60 送訊號給藍牙模組會不會比較好。
+另外雖然編起來了，不過因為底層不熟，還不太清楚架構，希望研究一下之後可以把它和藍牙發射器接起來，之前的 [自製 USB 鍵盤轉藍芽鍵盤轉接器](http://blog.dm4.tw/convert-usb-keyboard-to-bluetooth-keyboard) 會有點 latency ，不知道如果直接讓 GH60 送訊號給藍牙模組會不會比較好。
 
 [tmk_keyboard]: https://github.com/tmk/tmk_keyboard
 [tmk_keyboard_custom]: https://github.com/kairyu/tmk_keyboard_custom
