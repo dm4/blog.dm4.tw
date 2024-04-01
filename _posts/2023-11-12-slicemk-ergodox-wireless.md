@@ -36,7 +36,6 @@ redirect_from: /2023/11/12/slicemk-ergodox-wireless.html
 不過我覺得還有兩個很實用的優點官方沒有提到：
 
 - 切換藍牙和 USB 的時候速度超快！我是把接收器插在我的 PC 上，然後用藍牙連接我的筆電，但因為接收器基本上是隨時和所有藍牙裝置連接的，差別只是在使用 USB 模式的時候完全不會送出藍牙鍵盤訊號，所以只要設好切換藍牙裝置的快速鍵，切換的時候完全沒有延遲，不需要等鍵盤重新連上筆電的藍牙！
-
 - 因為是接收器在處理按鍵訊號，所以 key mapping 都是存在接收器上的，要刷 firmware 也只需要刷接收器上的就好，因為可以設定快速鍵讓接收器進入 bootloader 模式，刷完 firmware 接收器也會自己重啟，讓整個更新 key mapping 的流程變得很順暢！
 
 官方有提供收到鍵盤之後的第一次設定流程（在 [這裡](https://www.slicemk.com/pages/ergodox-wireless-guide) ），講的很清楚，推薦有買的拿到都先看一下。
@@ -46,15 +45,12 @@ redirect_from: /2023/11/12/slicemk-ergodox-wireless.html
 不過從 qmk 換到 zmk 我有遇到一些問題和大家分享：
 
 - qmk 和 zmk 的 keycode 命名不盡相同，如果想看完整的列表可以直接看 [keys.h](https://github.com/zmkfirmware/zmk/blob/main/app/include/dt-bindings/zmk/keys.h) 。
-
 - zmk 裡沒有像是 `QK_GRAVE_ESCAPE` 的 keycode 可以直接用，不過可以參考 [Mod-Morph](https://zmk.dev/docs/behaviors/mod-morph) 來處理，官方的舉例就是用 `grave_escape` ，貼心！
-
 - zmk 裡也沒有 `LM` 這個切換 layer 的 function 可以直接用，不過一樣，可以參考 [Macros](https://zmk.dev/docs/behaviors/macros) ，官方也有舉了 `&lm` 的例子，再次貼心！
 
 用了一陣子，目前想到希望能新增的功能有幾個：
 
 - 能夠回報鍵盤目前剩餘電量，在 SlickMK 的 Discord 裡有看到有相關討論，可能等 [feat(battery): Split battery reporting over BLE GATT](https://github.com/zmkfirmware/zmk/pull/1243) 這個 zmk 的 pull request 被 merge 之後就有機會了？
-
 - 能夠用 LED 顯示目前 layer 的狀態，這個應該是可以直接透過目前的 zmk 來達成，不過還沒研究怎麼做。
 
 我也 fork 了一份 zmk 來放 [我自己的 keymap](https://github.com/dm4/zmk/blob/dm4/app/boards/shields/slicemk_ergodox/slicemk_ergodox.keymap) ，目前也還在持續修改中，有興趣的可以參考看看。用到現在還是覺得很滿意，推薦大家如果有興趣使用無線的 ErgoDox 的話可以考慮看看！

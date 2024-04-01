@@ -16,3 +16,11 @@ img {
 .js-line-number {
     display: none !important;
 }
+
+ul,
+ol {
+  margin: 0;
+  li {
+    line-height: 2em;
+  }
+}
