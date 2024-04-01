@@ -13,6 +13,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-sitemap
 remote_theme: heiswayi/the-plain
 
 # show posts with future date

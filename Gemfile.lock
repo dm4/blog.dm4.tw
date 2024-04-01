@@ -271,6 +271,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-redirect-from
   jekyll-remote-theme
+  jekyll-sitemap
   webrick (~> 1.7)
 
 BUNDLED WITH
