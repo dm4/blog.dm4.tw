@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "更改 Jekyll 裡面的 permalink"
+title: "更改 Jekyll 裡面的 Permalink"
 ---
 
 今天決定把這個 Blog 裡的 permalink 從預設的 `/:year/:month/:day/:title:output_ext` 改成 `/:title` ，記錄一下過程。
