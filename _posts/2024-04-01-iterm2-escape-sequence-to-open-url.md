@@ -33,7 +33,9 @@ Triggers 的設定位置其實不太好找，是在 `Preferences` → `Profiles`
 $ man bash
 ...
 : [arguments]
-        No effect; the command does nothing beyond expanding arguments and performing any specified redirections.  A zero exit code is returned.
+        No effect; the command does nothing beyond expanding
+        arguments and performing any specified redirections.
+        A zero exit code is returned.
 ...
 ```
 
