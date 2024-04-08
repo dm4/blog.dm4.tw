@@ -29,7 +29,7 @@
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="{{ site.logo_url }}">
-  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:site_name" content="{{ site.title }}">
   <meta name="twitter:image:alt" content="{{ site.author_name }}">
