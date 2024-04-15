@@ -2,7 +2,9 @@
 layout: post
 title: "在 Mac OSX 上編譯 GH60 RevCHN Firmware"
 tags: [keyboard, gh60]
-redirect_from: /2015/03/17/build-gh60-revchn-on-mac.html
+redirect_from:
+    - /2015/03/17/build-gh60-revchn-on-mac.html
+    - /blog/2015/03/17/build-gh60-revchn-on-mac/
 ---
 
 來記錄一下在 Mac OSX 上，怎麼編譯和刷 GH60 RevCHN 的韌體
