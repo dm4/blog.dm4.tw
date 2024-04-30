@@ -28,3 +28,8 @@ ol {
 article hr {
   border-bottom: 1px solid #aaa;
 }
+
+// Remove underline of image links
+a:has(img) {
+  border-bottom-width: 0px;
+}
