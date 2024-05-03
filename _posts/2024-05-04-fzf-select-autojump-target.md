@@ -43,17 +43,7 @@ $ j abc f b
 
 所以可以這樣設定：
 
-```bash
-export FZF_COMPLETION_TRIGGER=',,'
-_fzf_complete_j() {
-    _fzf_complete --prompt="autojump> " -- "$@" < <(
-    j -s | awk -F $'\t' '/^___/{exit} {print $2}' | tac
-  )
-}
-_fzf_complete_j_post() {
-  awk '{printf "\"%s\"", $0}'
-}
-```
+{% gist bcc2b4ad28d73c770b405a11ea0006fe %}
 
 就可以在 CLI 打 `j ,,` 之後按 `Tab` 來搜尋 autojump 的目錄，搜尋完之後按下 `Enter` 就可以切換目錄，像是這樣：
 
