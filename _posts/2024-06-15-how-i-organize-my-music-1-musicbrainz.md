@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "我怎麼整理音樂 (1) - MusicBrainz"
+redirect_from: /how-i-organize-my-music-1
 ---
 
 回 [上一篇](recent-updates-gitlab-obsidian-beets) 最後的問題： 24 天！
