@@ -4,6 +4,8 @@ title: "我怎麼整理音樂 (1) - MusicBrainz"
 redirect_from: /how-i-organize-my-music-1
 ---
 
+{% include how-i-organize-my-music-toc.md %}
+
 回 [上一篇](recent-updates-gitlab-obsidian-beets) 最後的問題： 24 天！
 
 這三個星期的空閒時間裡，也仍然是在緩慢的在整理實體 CD ，雖然速度好像明顯的越來越慢，好像有點當初一頭熱想認真更新 blog 的感覺了……不過總共也處理了快一百張 CD ，好像差不多確定流程了，剛好可以來記錄一下。
