@@ -100,3 +100,4 @@ redirect_from: /how-i-organize-my-music-1
 [a‐tisket]: https://atisket.pulsewidth.org.uk/
 [Picard]: https://picard.musicbrainz.org/
 [EAC]: https://www.exactaudiocopy.de/
+[a-tisket]: https://atisket.pulsewidth.org.uk/
