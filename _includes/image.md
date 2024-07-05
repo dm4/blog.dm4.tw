@@ -1,1 +1,1 @@
-![{{ include.alt }}]({{ "/assets/images" | append: page.url | append: "/" | append: include.name }})
+[![{{ include.alt }}]({{ "/assets/images" | append: page.url | append: "/" | append: include.name }})]({{ "/assets/images" | append: page.url | append: "/" | append: include.name }}){:target="_blank"}
