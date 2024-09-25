@@ -64,7 +64,7 @@ printf "\e]1337;CursorShape=1\x07"
 在 iTerm2 裡正常的 shell 是能夠正常執行的，但只要一進 tmux 就會失效，因為 tmux 會把 escape sequence 給吃掉，所以要想辦法讓 tmux 把 escape sequence 往外傳給 iTerm2 裡面：
 
 ```bash
-printf "\ePtmux;\e\e\e]1337;CursorShape=1\x07\e\\\\"
+printf "\ePtmux;\e\e]1337;CursorShape=1\x07\e\\"
 ```
 
 這樣就可以了，所以接著就是照格式把要打開的 URL base64 編碼後傳給 iTerm2 就可以了，簡單弄了一個 [iterm-open-url.sh](https://github.com/dm4/rc/blob/master/bin/iterm-open-url.sh) ，把它放到 PATH 底下，接著 `export GH_BROWSER="iterm-open-url.sh"` 就好了！
