@@ -2,7 +2,9 @@
 layout: post
 title: "自製 USB 鍵盤轉藍芽鍵盤轉接器"
 tags: [arduino, hardware, keyboard]
-redirect_from: /2014/04/22/convert-usb-keyboard-to-bluetooth-keyboard.html
+redirect_from:
+  - /2014/04/22/convert-usb-keyboard-to-bluetooth-keyboard.html
+  - /blog/2014/04/22/convert-usb-keyboard-to-bluetooth-keyboard/
 ---
 
 ## 測試影片

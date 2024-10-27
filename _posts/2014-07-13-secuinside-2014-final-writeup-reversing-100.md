@@ -2,7 +2,9 @@
 layout: post
 title: SECUINSIDE CTF Finals 2014 Writeup - Reversing 100
 tags: [ctf, writeup]
-redirect_from: /2014/07/13/secuinside-2014-final-writeup-reversing-100.html
+redirect_from:
+  - /2014/07/13/secuinside-2014-final-writeup-reversing-100.html
+  - /blog/2014/07/13/secuinside-2014-final-writeup-reversing-100/
 ---
 
 這題在現場沒解完...因為覺得應該只差一點點，回來之後果然弄出來了啊！
@@ -21,6 +23,7 @@ http://dl.ctftime.org/144/1174/enc.txt
 ```
 
 第一個連結載下來之後會發現是一個 zip 檔
+
 ```text
 $ file 59a67b2df52c3e0a1330a5952a619462584bba28
 59a67b2df52c3e0a1330a5952a619462584bba28: Zip archive data, at least v1.0 to extract
@@ -123,7 +126,7 @@ end
 
 研究了一下會發現，如果要從 `enc` 逆推 `plain` 的話，只要暴搜每一輪的 `plain[i]` 和 `hash[i % 40]` ， `hash[i % 40]` 因為是 hex ，只會有 16 種可能，暴完 40 位的 `hash` 之後，再看 `sum` 的起始值有沒有滿足 `sum == all(hash)` 就可以知道結果了。
 
-比較討厭的是題目給的 `1. AAA-111-ASRT-3.1-CC[n]` ，真的去試的話會發現用 `1. ` 開頭的 plain 是沒有解的，後面接 `[n]` 也是一樣，所以最後試出來每行的格式應該是像 `[0-9A-Z]{3}-[0-9A-Z]{3}-ASRT-\d\.\d-[0-9A-Z]{2}\n`...解這題的時候因為格式也卡了好久...
+比較討厭的是題目給的 `1. AAA-111-ASRT-3.1-CC[n]` ，真的去試的話會發現用 `1.` 開頭的 plain 是沒有解的，後面接 `[n]` 也是一樣，所以最後試出來每行的格式應該是像 `[0-9A-Z]{3}-[0-9A-Z]{3}-ASRT-\d\.\d-[0-9A-Z]{2}\n`...解這題的時候因為格式也卡了好久...
 
 ```ruby
 enc = [
