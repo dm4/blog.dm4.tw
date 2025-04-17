@@ -4,16 +4,26 @@ permalink: /:title
 # for jekyll-feed
 author: dm4
 
+# for jekyll-seo-tag
+locale: zh_TW
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: https://s.gravatar.com/avatar/1b0b7bab4c837d80e1b110bd7127a0d8?s=750
+        alt: dm4
+
 # for the-plain theme
 author_name: dm4
 logo_url: https://s.gravatar.com/avatar/1b0b7bab4c837d80e1b110bd7127a0d8?s=750
-social_share_previews: true
 
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-seo-tag
 remote_theme: heiswayi/the-plain
 
 # show posts with future date
