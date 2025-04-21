@@ -3,6 +3,8 @@ permalink: /:title
 
 # for jekyll-feed
 author: dm4
+feed:
+  posts_limit: 99999 # unlimited
 
 # for jekyll-seo-tag
 locale: zh_TW
