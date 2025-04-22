@@ -4,17 +4,15 @@ permalink: /:title
 # for jekyll-feed
 author: dm4
 feed:
-  posts_limit: 99999 # unlimited
-
-# for jekyll-seo-tag
-locale: zh_TW
+  posts_limit: 99999  # unlimited
 defaults:
   - scope:
       path: ""
     values:
-      image:
-        path: https://s.gravatar.com/avatar/1b0b7bab4c837d80e1b110bd7127a0d8?s=750
-        alt: dm4
+      lang: zh-TW     # for xml:lang
+
+# for jekyll-seo-tag
+locale: zh_TW         # for og:locale
 
 # for the-plain theme
 author_name: dm4
