@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "WezTerm Configuration: Making Tab Width Fill the Tab Bar"
+lang: en
+locale: en
 ---
 
 I've finally taken the time to switch my terminal to [WezTerm](https://wezfurlong.org/wezterm/) these past few days. However, I couldn't find an option to make the tab width fill the entire window width. The closest I found was an issue: [Add "stretch tabs to fill tab bar" option](https://github.com/wez/wezterm/issues/1914), but it seems to be discussing a fancy style tab bar?
