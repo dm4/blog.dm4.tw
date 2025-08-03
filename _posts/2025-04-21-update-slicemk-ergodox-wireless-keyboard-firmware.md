@@ -14,9 +14,9 @@ ogimage: "ogimage.png"
 
 BLE660C 是一個 Leopold FC660C 的改裝方案，藉由把原本的主控換掉再加上個鋰電池，讓 FC660C 從一把有線鍵盤，變成一把有線 / 藍牙都可以用的鍵盤，也可以從官方提供的 [Keymap Builder](https://ydkb.io/?ble660c) 自訂鍵位，不過在 macOS 上的刷機流程稍微有點麻煩就是了，要認真看一下文件。
 
-不過換鍵盤也讓我發現，有個近期才新增的按鍵設定實在是太好用了，和大家分享一下：把左下角的 Ctrl  `⌃` 設成 Command `⌘` + Option `⌥` ！
+不過換鍵盤也讓我發現，有個近期才新增的按鍵設定實在是太好用了，和大家分享一下：把左下角的 Ctrl `⌃` 設成 Command `⌘` + Option `⌥` ！
 
-在這個年代，感覺把 CapsLock 改掉已經是基本操作了？之前用筆電的時候並不是直接讓 CapsLock 和 Ctrl 交換，而是把 CapsLock 設成 Ctrl ，因為 MacBook 鍵盤右邊沒有 Ctrl ，這樣設定完就是左側會有兩個鍵（ CapsLock / Ctrl ）按下去都是 Ctrl ，保留原本的 Ctrl 一方面是怕突然會需要借人操作電腦，再來也是想說有些 Ctrl  `⌃` + Option `⌥` 之類的快捷鍵比較好按。
+在這個年代，感覺把 CapsLock 改掉已經是基本操作了？之前用筆電的時候並不是直接讓 CapsLock 和 Ctrl 交換，而是把 CapsLock 設成 Ctrl ，因為 MacBook 鍵盤右邊沒有 Ctrl ，這樣設定完就是左側會有兩個鍵（ CapsLock / Ctrl ）按下去都是 Ctrl ，保留原本的 Ctrl 一方面是怕突然會需要借人操作電腦，再來也是想說有些 Ctrl `⌃` + Option `⌥` 之類的快捷鍵比較好按。
 
 不過用久了發現其實用到 Ctrl 的組合鍵不多，這種多個 modifier keys 的快捷鍵，好像最常用到的還是 Command `⌘` + Option `⌥` ！除了一些軟體預設的快捷鍵會用到這種組合外，我後來也找了幾個組合來設成 Raycast 各種常用動作的 Hotkey ，真的是用過就回不去了。
 
