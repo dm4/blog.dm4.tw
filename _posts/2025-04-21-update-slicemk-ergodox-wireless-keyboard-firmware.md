@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "更新 SliceMK ErgoDox Wireless 鍵盤 Firmware"
-image: "/assets/images/update-slicemk-ergodox-wireless-keyboard-firmware/ogimage.png"
+ogimage: "ogimage.png"
 ---
 
 從上次提到開始用 [SliceMK ErgoDox Wireless 鍵盤](/slicemk-ergodox-wireless) 之後，在家裡幾乎就沒在換過鍵盤了，無線的分離式鍵盤實在是值得推薦，加上主控是在 USB dongle 上，所以鍵盤本身也不太耗電，依照我自己的用量，實測大概可以撐半年左右。
