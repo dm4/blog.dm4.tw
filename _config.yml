@@ -1,5 +1,6 @@
 # for jekyll
 permalink: /:title
+url: https://blog.dm4.tw
 
 # for jekyll-feed
 author: dm4
