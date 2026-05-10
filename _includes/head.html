@@ -28,3 +28,12 @@
 {% if site.mathjax %}
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 {% endif %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="http"]:not([href*="' + location.hostname + '"])')
+      .forEach(function (a) {
+        a.target = '_blank';
+      });
+  });
+</script>
