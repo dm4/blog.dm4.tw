@@ -4,6 +4,10 @@ title: "macOS 裡的刪節號"
 redirect_from: /2024/01/08/ellipsis-in-macos.html
 ---
 
+> 這是 **[BlogBlog 同樂會 - 2026 年 7 月](https://blogblog.club/party/)** 的投稿文章。本月主題是 **[有趣的小知識或冷門概念](https://shuaixin.cc/Fun-Fact/)** ，由[劉昕](https://shuaixin.cc/)主持。如果你有自己的部落格，歡迎一起來參加！
+
+> （終於有合適的主題投稿了～雖然是兩年前的舊文，不過我現在還是覺得滿有趣的！）
+
 前陣子在試著加 macOS 的快速鍵設定的時候，發現像訊息選單裡 **封鎖成員⋯** / **刪除對話⋯** 之中的刪節號一直打不出來，如圖：
 
 ![](/assets/images/2024-01-08/messages-menu.png)
