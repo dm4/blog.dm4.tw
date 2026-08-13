@@ -37,3 +37,49 @@ article hr {
 a:has(img) {
   border-bottom-width: 0px;
 }
+
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.post-actions .post-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 33px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+
+.post-actions .post-action:hover,
+.post-actions .post-action:focus {
+  border: 0;
+  background-color: #555;
+  color: #fff;
+}
+
+.post-actions .post-action-email {
+  width: 33px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.post-actions .post-action-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.post-actions .support-heart {
+  color: red;
+}
