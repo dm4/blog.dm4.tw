@@ -18,7 +18,7 @@ redirect_from: /2012/07/26/hitcon-2012-wargame-notes-part-2.html
 [駭客觀察日記](http://www.youtube.com/watch?v=l2dvg3KJoPo) 啊啊啊 orz
 
 這題的 [提示二](http://www.exploit-db.com/wp-content/themes/exploit/docs/19527.pdf)
-出來之後，可以發現長檔名的檔案/資料夾會因為 `~` 的縮寫而 disclosure ，所以可以寫個
+出來之後，可以發現長檔名的檔案/資料夾會因為 `~` 的縮寫而 disclosure，所以可以寫個
 [script](https://gist.github.com/3180618) 來踹，或是用 hint 裡有提到的 [iis-shortname-scanner-poc](http://code.google.com/p/iis-shortname-scanner-poc/)
 
 不過試了之後發現 file disclosure 只限於有 `~` 的長檔名，

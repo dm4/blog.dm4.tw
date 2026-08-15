@@ -17,9 +17,9 @@ redirect_from:
 
 ### 步驟
 
-根據 http://www.v2ex.com/t/161887 首先要先用 brew 裝crosspack 和 dfu-programmer ，不過因為時間過太久，有點忘記詳細的安裝指令， crosspack 需要 `brew tap` 的樣子。
+根據 http://www.v2ex.com/t/161887 首先要先用 brew 裝 crosspack 和 dfu-programmer，不過因為時間過太久，有點忘記詳細的安裝指令，crosspack 需要 `brew tap` 的樣子。
 
-裝完之後可以來載 source ，因為 [tmk/tmk_keyboard][tmk_keyboard] 不支援 RevCHN ，所以要用 [kairyu/tmk_keyboard_custom][tmk_keyboard_custom]
+裝完之後可以來載 source，因為 [tmk/tmk_keyboard][tmk_keyboard] 不支援 RevCHN，所以要用 [kairyu/tmk_keyboard_custom][tmk_keyboard_custom]
 
 ```
 git clone https://github.com/kairyu/tmk_keyboard_custom.git
@@ -40,7 +40,7 @@ vim config.h
 
 本來以為這樣就可以了，沒想到一直刷失敗，後來看了 http://www.v2ex.com/t/161887 和 https://www.ptt.cc/bbs/Key_Mou_Pad/M.1426361327.A.EEB.html 兩篇，發現應該是要清空 EEPROM 的問題（可是我硬體知識不足，根本不知道那是什麼啊啊啊）
 
-ptt 那篇的解法是「在插入 usb 前，按住 backspace 與 space 」，不過我有找到 Makefie 裡有個設定，刪掉（註解掉）也是可以的，和大家分享一下：
+ptt 那篇的解法是「在插入 usb 前，按住 backspace 與 space」，不過我有找到 Makefie 裡有個設定，刪掉（註解掉）也是可以的，和大家分享一下：
 
 ```
 vim Makefile
@@ -52,7 +52,7 @@ vim Makefile
 KEYMAP_IN_EEPROM_ENABLE = yes # Read keymap from eeprom
 ```
 
-接下來就插上鍵盤， OSX 應該會抓到一隻 GH60 ，可以用 `system_profiler SPUSBDataType` 指令檢查一下
+接下來就插上鍵盤，OSX 應該會抓到一隻 GH60，可以用 `system_profiler SPUSBDataType` 指令檢查一下
 
 ```
 (master) [~/workspace/tmk_keyboard_custom/keyboard/gh60] ➟  system_profiler SPUSBDataType
@@ -113,7 +113,7 @@ dfu-programmer atmega32u4 reset
 
 這樣子最基本的 layout 就成功了，如果不確定是不是真的有刷進去，可以改一下 `keymap_poker.c` 裡的 layout 看是不是真的刷進去了（例如把 `Q` 改成 `X` 之類的）
 
-再來就可以自訂 layout 了，本來想很硬派的直接寫 c code ，不過覺得 code 裡很難排版，最後還是用 [keyboard-layout-editor (KLE)][KLE] 和 [TMK Keymap Generator (TKG)][TKG] 來生成 c code ，我用的 layout 是：
+再來就可以自訂 layout 了，本來想很硬派的直接寫 c code，不過覺得 code 裡很難排版，最後還是用 [keyboard-layout-editor (KLE)][KLE] 和 [TMK Keymap Generator (TKG)][TKG] 來生成 c code，我用的 layout 是：
 
 - Layer 0 (Default)
     - http://www.keyboard-layout-editor.com/#/layouts/cc85b037963edc17fe98f84e970e3ca4
@@ -135,7 +135,7 @@ dfu-programmer atmega32u4 reset
 - Fn1
     - Layer action > Toggle layer 1
 
-這裡要注意，我把 Fn0 層放在 layer 2 ，是因為 key mapping 會從高層讀到低層，如果把 Fn1 層換到 layer 2 ， Fn0 換到 layer 1 ，這樣子在切到 Fn1 層之後，按著 Fn0 也沒辦法切到 Fn0 層（同樣的問題在 https://www.ptt.cc/bbs/Key_Mou_Pad/M.1390542876.A.073.html 也有解釋）
+這裡要注意，我把 Fn0 層放在 layer 2，是因為 key mapping 會從高層讀到低層，如果把 Fn1 層換到 layer 2，Fn0 換到 layer 1，這樣子在切到 Fn1 層之後，按著 Fn0 也沒辦法切到 Fn0 層（同樣的問題在 https://www.ptt.cc/bbs/Key_Mou_Pad/M.1390542876.A.073.html 也有解釋）
 
 接著就在 [TKG][TKG] 下載 `.c` 檔，把載下來的 `keymap.c` 放到資料夾下並改名，就可以準備刷了
 
@@ -151,13 +151,13 @@ keymap_tkg.c:29:78: error: macro "KEYMAP_TKG" requires 62 arguments, but only 61
          LCTL,LALT,LGUI,          SPC,                     FN0, RGUI,RALT,RCTL),
 ```
 
-是因為 [TKG][TKG] 生 `.c` 檔的時候好像有 bug ，載下來的檔案，裡面的
+是因為 [TKG][TKG] 生 `.c` 檔的時候好像有 bug，載下來的檔案，裡面的
 
 ```
 ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0    MINS,EQL, BSPC, \
 ```
 
-`0` 和 `MINS` 中間少了 `,` ，所以改成
+`0` 和 `MINS` 中間少了 `,`，所以改成
 
 ```
 ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,    MINS,EQL, BSPC, \
@@ -169,7 +169,7 @@ ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,    MINS,EQL, BSPC, \
 
 有一些 Fn action 現在還沒摸熟，看起來可以送 key / macro 的樣子，看到 https://github.com/kairyu/tmk_keyboard_custom/blob/master/keyboard/hhkb/keymap_hasu.c 有一些 function / macro 的用法還沒研究。
 
-另外雖然編起來了，不過因為底層不熟，還不太清楚架構，希望研究一下之後可以把它和藍牙發射器接起來，之前的 [自製 USB 鍵盤轉藍芽鍵盤轉接器](http://blog.dm4.tw/convert-usb-keyboard-to-bluetooth-keyboard) 會有點 latency ，不知道如果直接讓 GH60 送訊號給藍牙模組會不會比較好。
+另外雖然編起來了，不過因為底層不熟，還不太清楚架構，希望研究一下之後可以把它和藍牙發射器接起來，之前的 [自製 USB 鍵盤轉藍芽鍵盤轉接器](http://blog.dm4.tw/convert-usb-keyboard-to-bluetooth-keyboard) 會有點 latency，不知道如果直接讓 GH60 送訊號給藍牙模組會不會比較好。
 
 [tmk_keyboard]: https://github.com/tmk/tmk_keyboard
 [tmk_keyboard_custom]: https://github.com/kairyu/tmk_keyboard_custom

@@ -88,9 +88,9 @@ Load command 13
         pad   0
 ```
 
-`cryptid` 是 0 表示沒有加密，所以我們可以直接來看 `Payload/Inverse.app/Inverse` ！
+`cryptid` 是 0 表示沒有加密，所以我們可以直接來看 `Payload/Inverse.app/Inverse`！
 
-看了 code 之後會發現在 `[ViewController viewDidLoad]` 裡會去讀 `/Users/hkpco/tmp/plain.txt` ，把檔案的內容當作參數傳給 `[ViewController es:]` ，在 `[ViewController es:]` 裡會把 `/Users/hkpco/tmp/plain.txt` 和 `/Users/hkpco/tmp/pass.txt` 做一些處理之後，把結果寫到 `/Users/hkpco/tmp/enc.txt`
+看了 code 之後會發現在 `[ViewController viewDidLoad]` 裡會去讀 `/Users/hkpco/tmp/plain.txt`，把檔案的內容當作參數傳給 `[ViewController es:]`，在 `[ViewController es:]` 裡會把 `/Users/hkpco/tmp/plain.txt` 和 `/Users/hkpco/tmp/pass.txt` 做一些處理之後，把結果寫到 `/Users/hkpco/tmp/enc.txt`
 
 把整段用 `ruby` 重寫會長得像
 
@@ -122,11 +122,11 @@ def es(plain, pass)
 end
 ```
 
-所以看到目前為止，我們要做的應該是「只知道 `enc` ，想辦法推回原本的 `plain` 」，原本的 `pass` 是什麼對我們來說不重要，我們只要知道 `hash = s(pass)` 是什麼就好了！
+所以看到目前為止，我們要做的應該是「只知道 `enc`，想辦法推回原本的 `plain`」，原本的 `pass` 是什麼對我們來說不重要，我們只要知道 `hash = s(pass)` 是什麼就好了！
 
-研究了一下會發現，如果要從 `enc` 逆推 `plain` 的話，只要暴搜每一輪的 `plain[i]` 和 `hash[i % 40]` ， `hash[i % 40]` 因為是 hex ，只會有 16 種可能，暴完 40 位的 `hash` 之後，再看 `sum` 的起始值有沒有滿足 `sum == all(hash)` 就可以知道結果了。
+研究了一下會發現，如果要從 `enc` 逆推 `plain` 的話，只要暴搜每一輪的 `plain[i]` 和 `hash[i % 40]`，`hash[i % 40]` 因為是 hex，只會有 16 種可能，暴完 40 位的 `hash` 之後，再看 `sum` 的起始值有沒有滿足 `sum == all(hash)` 就可以知道結果了。
 
-比較討厭的是題目給的 `1. AAA-111-ASRT-3.1-CC[n]` ，真的去試的話會發現用 `1.` 開頭的 plain 是沒有解的，後面接 `[n]` 也是一樣，所以最後試出來每行的格式應該是像 `[0-9A-Z]{3}-[0-9A-Z]{3}-ASRT-\d\.\d-[0-9A-Z]{2}\n`...解這題的時候因為格式也卡了好久...
+比較討厭的是題目給的 `1. AAA-111-ASRT-3.1-CC[n]`，真的去試的話會發現用 `1.` 開頭的 plain 是沒有解的，後面接 `[n]` 也是一樣，所以最後試出來每行的格式應該是像 `[0-9A-Z]{3}-[0-9A-Z]{3}-ASRT-\d\.\d-[0-9A-Z]{2}\n`...解這題的時候因為格式也卡了好久...
 
 ```ruby
 enc = [
@@ -299,7 +299,7 @@ $ ruby solve.rb
 "011c945f30ce2cbafc452f39840f025693339909"
 ```
 
-接著就直接用這兩組來解 enc ，看看哪個才是正解！
+接著就直接用這兩組來解 enc，看看哪個才是正解！
 
 ```ruby
 def es_hash(enc, hash)
@@ -324,6 +324,6 @@ $ ruby solve.rb
 "SEC-41A-ASRT-3.1-OK\nKOR-A43-ASRT-9.3-KO\nCOV-718-ASRT-7.9-QE\nCON-C1D-ASRT-1.1-CO\nCOM-ICQ-ASRT-1.9-KR\nLSA-IQ1-ASRT-3.0-KR\nAES-JOO-ASRT-9.9-KR\n"
 ```
 
-所以 flag 應該就是第四行的 `CON-C1D-ASRT-1.1-CO` ！
+所以 flag 應該就是第四行的 `CON-C1D-ASRT-1.1-CO`！
 
-不過最後正確的 `hash` 是 `011c945f30ce2cbafc452f39840f025693339c42` ，其實 `pass` 就只是 `1111` 而已...
+不過最後正確的 `hash` 是 `011c945f30ce2cbafc452f39840f025693339c42`，其實 `pass` 就只是 `1111` 而已...

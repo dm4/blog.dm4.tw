@@ -3,9 +3,9 @@ layout: post
 title: "3D 列印機推薦模型 (1)"
 ---
 
-其實本來是打算買 Switch 2 的，不過幾個月前發現拓竹 3D 列印機有特價，秉持著一次只買一樣玩具的精神，索性退了在 PChome 預購的第一批 Switch 2 改下單了一台 A1 mini 。
+其實本來是打算買 Switch 2 的，不過幾個月前發現拓竹 3D 列印機有特價，秉持著一次只買一樣玩具的精神，索性退了在 PChome 預購的第一批 Switch 2 改下單了一台 A1 mini。
 
-結果可能因為預購時間太長， PChome 的退款竟然是退到銀行帳戶裡，爽賺一波信用卡回饋，耶！
+結果可能因為預購時間太長，PChome 的退款竟然是退到銀行帳戶裡，爽賺一波信用卡回饋，耶！
 
 拿到之後印了一堆有的沒有，下面推薦一些（我覺得）新手值得印來玩玩看的東西。
 
@@ -37,8 +37,8 @@ title: "3D 列印機推薦模型 (1)"
 - [Xbox 手把架](https://makerworld.com/zh/models/13620-minimalistic-xbox-controller-stand)
   - 就……很 fit 很好看？
 - [iPhone 充電底座](https://makerworld.com/zh/models/615378-iphone-standby-mode-dock-designed-with-overwerk)
-  - 我在買之前就先在 Scott Yu-Jan 的影片上看過了，如果沒看過的話在 [這裡](https://www.youtube.com/watch?v=L3nWw8qSYgk) 。
-  - 喜歡的話我覺得 SYJ 這部影片也很讚：[用 3D 列印整理抽屜](https://www.youtube.com/watch?v=-s74phtezf4) 。
+  - 我在買之前就先在 Scott Yu-Jan 的影片上看過了，如果沒看過的話在 [這裡](https://www.youtube.com/watch?v=L3nWw8qSYgk)。
+  - 喜歡的話我覺得 SYJ 這部影片也很讚：[用 3D 列印整理抽屜](https://www.youtube.com/watch?v=-s74phtezf4)。
   - 因為不太喜歡列印的塑膠模型摩擦時的聲音（特別是垂直層紋摩擦……），我有在一些滑動件的地方貼了鐵氟龍膠帶，十分有效，推薦給大家。
 
 補個圖：

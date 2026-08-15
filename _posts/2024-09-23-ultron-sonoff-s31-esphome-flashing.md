@@ -5,9 +5,9 @@ title: "Ultron 奧創智慧插座 (Sonoff S31) 刷 ESPHome"
 
 之前看到這篇 [SONOFF S31 刷 ESPHome](https://hackmd.io/@LHB-0222/sonoff_S31_ESPHome) 之後就想買幾個來試試，因為我只是想拿來監測一些插座的用電量，用智慧插座很怕想理線的時候誤觸按鈕造成斷電，刷 [ESPHome](https://esphome.io/) 除了方便之後更新設定之外，也可以順便拿掉實體按鈕的繼電器開關功能。
 
-上網查了一下發現好像台灣比較難直接買到 Sonoff S31 ，不過倒是找到一個外型幾乎一樣的 [奧創智慧插座 Lite](https://www.ultronsmart.com/product/smart-outlet) ，看起來價格好像也差不多，就買了個來試刷看看。
+上網查了一下發現好像台灣比較難直接買到 Sonoff S31，不過倒是找到一個外型幾乎一樣的 [奧創智慧插座 Lite](https://www.ultronsmart.com/product/smart-outlet)，看起來價格好像也差不多，就買了個來試刷看看。
 
-拆開來果然發現 PCB 上面就是印著 Sonoff S31 ！不過手上沒有測試勾或是燒錄夾，就用手邊的鱷魚夾試刷 ESPHome ……沒想到真的成功了 XD
+拆開來果然發現 PCB 上面就是印著 Sonoff S31！不過手上沒有測試勾或是燒錄夾，就用手邊的鱷魚夾試刷 ESPHome……沒想到真的成功了 XD
 
 {% include image.md name="flashing.jpg" %}
 

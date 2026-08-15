@@ -29,7 +29,7 @@ ________________________________________
 data:    /Users/dm4/Library/autojump/autojump.txt
 ```
 
-這時候用 `j bar` 可能會不確定要去哪個目錄，雖然官方提供了 Multiple Arguments 的功能，但我測試起來，在上面的狀況下，用 `j abc bar` 並不能保證一定會去 `abc/foo/bar`（詳細的路徑比對邏輯可以參考 [autojump_match.py](https://github.com/wting/autojump/blob/master/bin/autojump_match.py) ），用 `j abc foo bar` 才能確保一定會進到 `abc/foo/bar` 。
+這時候用 `j bar` 可能會不確定要去哪個目錄，雖然官方提供了 Multiple Arguments 的功能，但我測試起來，在上面的狀況下，用 `j abc bar` 並不能保證一定會去 `abc/foo/bar`（詳細的路徑比對邏輯可以參考 [autojump_match.py](https://github.com/wting/autojump/blob/master/bin/autojump_match.py)），用 `j abc foo bar` 才能確保一定會進到 `abc/foo/bar`。
 
 ```console
 $ j abc bar
@@ -38,8 +38,8 @@ $ j abc f b
 /Users/dm4/abc/foo/bar
 ```
 
-所以更可視化的模糊搜尋工具 [fzf] 這時候就派上用場了！利用 [fzf] 提供的 `_fzf_complete_COMMAND` 功能，可以讓我們自訂不同指令的 completion ，詳細說明可以參考官方的 [Custom fuzzy completion
-](https://github.com/junegunn/fzf/?tab=readme-ov-file#custom-fuzzy-completion) 。
+所以更可視化的模糊搜尋工具 [fzf] 這時候就派上用場了！利用 [fzf] 提供的 `_fzf_complete_COMMAND` 功能，可以讓我們自訂不同指令的 completion，詳細說明可以參考官方的 [Custom fuzzy completion
+](https://github.com/junegunn/fzf/?tab=readme-ov-file#custom-fuzzy-completion)。
 
 所以可以這樣設定：
 
@@ -51,8 +51,8 @@ $ j abc f b
 
 一樣是一些說明：
 
-- `FZF_COMPLETION_TRIGGER` 預設是 `**` ，也就是在 CLI 打兩個 `*` 之後按 `Tab` 會觸發 fzf 的 completion ，這邊我改成 `,,` 單純是因為覺得比較順手 XD
-- 沒用過 `**<Tab>` 功能的推薦可以試試看 `kill **<Tab>` 這樣可以看到所有的 process ，搜完之後按下 enter 就可以選定 PID 當成參數，或在 [fzf] 中按 `Tab` 來選取多個 PID 。
+- `FZF_COMPLETION_TRIGGER` 預設是 `**`，也就是在 CLI 打兩個 `*` 之後按 `Tab` 會觸發 fzf 的 completion，這邊我改成 `,,` 單純是因為覺得比較順手 XD
+- 沒用過 `**<Tab>` 功能的推薦可以試試看 `kill **<Tab>` 這樣可以看到所有的 process，搜完之後按下 enter 就可以選定 PID 當成參數，或在 [fzf] 中按 `Tab` 來選取多個 PID。
 
 [![][kill]][kill]{:target="_blank"}
 

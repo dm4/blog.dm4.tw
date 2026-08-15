@@ -7,9 +7,9 @@ title: "四天連假來玩 Magic Mirror / Arc / WireGuard / Home Assistant / ESP
 
 ### [Magic Mirror](https://magicmirror.builders/)
 
-一年多之前搬家之後就沒有再架起來，這次把 Magic Mirror 重新架起來，一樣是用來看個天氣、時間、行事曆之類的。這次就不像之前一樣跑在 Raspberry Pi 上，改成在自己的機器上用 Docker 跑 server mode ，在 Raspberry Pi 上單純跑 client mode 來顯示畫面在螢幕上。
+一年多之前搬家之後就沒有再架起來，這次把 Magic Mirror 重新架起來，一樣是用來看個天氣、時間、行事曆之類的。這次就不像之前一樣跑在 Raspberry Pi 上，改成在自己的機器上用 Docker 跑 server mode，在 Raspberry Pi 上單純跑 client mode 來顯示畫面在螢幕上。
 
-也發現 Raspberry Pi 上關掉 HDMI 的指令好像和之前不一樣？舊的指令像是 `vcgencmd`, `tvservice` 好像都不能用了，試了 `xrandr` 也失敗，後來查到可以用 `wlr-randr` ：
+也發現 Raspberry Pi 上關掉 HDMI 的指令好像和之前不一樣？舊的指令像是 `vcgencmd`, `tvservice` 好像都不能用了，試了 `xrandr` 也失敗，後來查到可以用 `wlr-randr`：
 
 ```bash
 # 拿裝置資訊
@@ -21,9 +21,9 @@ WAYLAND_DISPLAY="wayland-1" wlr-randr --output HDMI-A-1 --on
 
 ## [Arc](https://arc.net/)
 
-一個看上去很潮的瀏覽器，用了一兩天之後決定把預設瀏覽器從 Safari 換成它試試看， Tab 集中在左邊我覺得很讚，設成預設瀏覽器之後在其他程式裡點連結會打開一個暫時的 Little Arc 也很方便，不過它現在主打的 AI 功能我沒什麼感覺就是了。
+一個看上去很潮的瀏覽器，用了一兩天之後決定把預設瀏覽器從 Safari 換成它試試看，Tab 集中在左邊我覺得很讚，設成預設瀏覽器之後在其他程式裡點連結會打開一個暫時的 Little Arc 也很方便，不過它現在主打的 AI 功能我沒什麼感覺就是了。
 
-邀請連結： <https://arc.net/gift/662735f6>
+邀請連結：<https://arc.net/gift/662735f6>
 
 ## [Wireguard](https://www.wireguard.com/)
 
@@ -33,11 +33,11 @@ WAYLAND_DISPLAY="wayland-1" wlr-randr --output HDMI-A-1 --on
 
 ## [Home Assistant](https://www.home-assistant.io/)
 
-在一年多前的租屋處本來是用 [Homebridge](https://homebridge.io/) 來接一些裝置在 HomeKit 上，一樣搬家之後就沒有再架起來，想說反正都要重新加一堆設備了，索性直接換成支援更多裝置的 Home Assistant 來試試看，印象中可能兩三年前也有試過一次 Home Assistant ，但是當時覺得設定太麻煩，加上已經有東西跑在 Homebridge 上，就沒認真研究。不過這次體感上設定比印象中容易一點？不知道是錯覺，還是這幾年真的改善了很多流程。
+在一年多前的租屋處本來是用 [Homebridge](https://homebridge.io/) 來接一些裝置在 HomeKit 上，一樣搬家之後就沒有再架起來，想說反正都要重新加一堆設備了，索性直接換成支援更多裝置的 Home Assistant 來試試看，印象中可能兩三年前也有試過一次 Home Assistant，但是當時覺得設定太麻煩，加上已經有東西跑在 Homebridge 上，就沒認真研究。不過這次體感上設定比印象中容易一點？不知道是錯覺，還是這幾年真的改善了很多流程。
 
 不得不說 Home Assistant 對裝置的支援度真的是滿高的，家裡的藍牙 BLE 溫濕度計都可以無痛加入（甚至還搜到了隔壁的小米體重計……），像洗衣機、印表機的也有找到第三方的 Integration 可以用。
 
-還沒有研究太多功能，之後應該會先試 [Zigbee2MQTT](https://www.zigbee2mqtt.io/) ！
+還沒有研究太多功能，之後應該會先試 [Zigbee2MQTT](https://www.zigbee2mqtt.io/)！
 
 ## [ESPHome](https://esphome.io/index.html)
 

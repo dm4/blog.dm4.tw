@@ -8,7 +8,7 @@ tags:
 redirect_from: /2012/07/24/firefox-hackbar-font-setting-on-mac-osx.html
 ---
 
-聽說 [HackBar](https://addons.mozilla.org/en-us/firefox/addon/hackbar/) 是 Firefox 下很好用的 extension ，
+聽說 [HackBar](https://addons.mozilla.org/en-us/firefox/addon/hackbar/) 是 Firefox 下很好用的 extension，
 不過在 Mac OSX 下的字型實在是......慘不忍賭，所以找了一下設定檔在哪裡，Firefox extension 在 Mac OSX 下的路徑是：
 
     ~/Library/Application Support/Firefox/Profiles/xxxxxxxx.default/extensions/{F5DDF39C-9293-4d5e-9AA8-E04E6DD5E9B4}.xpi

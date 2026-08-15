@@ -3,11 +3,11 @@ layout: post
 title: "用 Home Assistant 的 HomeKit Bridge 在 HomeKit 裡顯示資訊"
 ---
 
-[Home Assistant](https://www.home-assistant.io/) 原生就支援 [HomeKit Bridge](https://www.home-assistant.io/integrations/homekit/) ，可以讓 Home Assistant 做為一個 HomeKit 橋接器，讓指定的裝置也能在 HomeKit 上顯示。
+[Home Assistant](https://www.home-assistant.io/) 原生就支援 [HomeKit Bridge](https://www.home-assistant.io/integrations/homekit/)，可以讓 Home Assistant 做為一個 HomeKit 橋接器，讓指定的裝置也能在 HomeKit 上顯示。
 
 不過根據文件裡的 [Supported Integrations](https://www.home-assistant.io/integrations/homekit/#supported-integrations) 會發現並不是所有的裝置都支援，像是 `sensor` 在 HomeKit 上就只能顯示幾種固定的資訊，這幾天嘗試了一下怎麼樣能讓 HomeKit 上顯示更多資訊（主要是能顯示自訂的文字或圖片）。
 
-因為家裡的洗衣機連上 Home Assistant 之後能夠知道剩餘洗衣時間，實體會是一個 `sensor.remaining_time` ，狀態會是一個時間字串 `h:mm:ss` ，想說能不能透過 HomeKit Bridge 來顯示剩餘洗衣時間。
+因為家裡的洗衣機連上 Home Assistant 之後能夠知道剩餘洗衣時間，實體會是一個 `sensor.remaining_time`，狀態會是一個時間字串 `h:mm:ss`，想說能不能透過 HomeKit Bridge 來顯示剩餘洗衣時間。
 
 最一開始想透過裝置名稱來顯示想要的字串，結果發現……
 
@@ -37,9 +37,9 @@ convert -size 600x200 xc:black -font WenQuanYi-Micro-Hei \
 
 ![](/assets/images/home-assistant-homekit-bridge-display-info/curl-api-imgcat.png)
 
-（上面用的 `imgcat` 是 [這個](https://pypi.org/project/imgcat/) ，我覺得很讚）
+（上面用的 `imgcat` 是 [這個](https://pypi.org/project/imgcat/)，我覺得很讚）
 
-因為 Generic Camera 裡的圖片網址可以是 [template](https://www.home-assistant.io/docs/configuration/templating/) ，所以最後在 Generic Camera 的圖片網址填上像是
+因為 Generic Camera 裡的圖片網址可以是 [template](https://www.home-assistant.io/docs/configuration/templating/)，所以最後在 Generic Camera 的圖片網址填上像是
 
 {% raw %}
 
@@ -55,7 +55,7 @@ http://localhost:5002/ha/wash/洗衣機剩下 {{ states("sensor.remaining_time")
 
 順便記錄一下中間學到，但是最後沒用到的 Home Assistant 功能：
 
-本來沒有發現圖片網址是 template ，還先用了 [RESTful Command](https://www.home-assistant.io/integrations/rest_command/) 來發 HTTP request 生成圖片：
+本來沒有發現圖片網址是 template，還先用了 [RESTful Command](https://www.home-assistant.io/integrations/rest_command/) 來發 HTTP request 生成圖片：
 
 {% raw %}
 

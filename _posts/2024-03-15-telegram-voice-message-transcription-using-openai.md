@@ -5,7 +5,7 @@ tags: [ai, telegram]
 redirect_from: /2024/03/15/telegram-voice-message-transcription-using-openai.html
 ---
 
-好像沒什麼好說的，就是個接 API 的小練習。值得一提的可能是發現了 [ffmpy](https://pypi.org/project/ffmpy/) ，其實裡面就是幫你用 `subprocess` 呼叫 `ffmpeg` 指令
+好像沒什麼好說的，就是個接 API 的小練習。值得一提的可能是發現了 [ffmpy](https://pypi.org/project/ffmpy/)，其實裡面就是幫你用 `subprocess` 呼叫 `ffmpeg` 指令
 
 ```python
 import logging
@@ -74,6 +74,6 @@ if __name__ == "__main__":
 
 ---
 
-**Update:** 後來又用 `InlineKeyboardMarkup` 加了一個按鈕，按下去之後可以直接拿處理完的文字訊息當作問題，拿去問 `gpt-4-turbo-preview` ，用起來長這樣：
+**Update:** 後來又用 `InlineKeyboardMarkup` 加了一個按鈕，按下去之後可以直接拿處理完的文字訊息當作問題，拿去問 `gpt-4-turbo-preview`，用起來長這樣：
 
 ![](/assets/images/2024-03-15/ask-ai.png)

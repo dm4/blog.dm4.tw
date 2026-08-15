@@ -3,7 +3,7 @@ layout: post
 title: "WireGuard 新增 Client 的設定"
 ---
 
-記錄一下怎麼在 [WireGuard][wg] 裡新增一個 client ，我自己的使用上比較單純，只是想讓所有的 client 都能 tunnel 到 server ，然後從 server 對外連線，不是太在意 client 之間互相連線。
+記錄一下怎麼在 [WireGuard][wg] 裡新增一個 client，我自己的使用上比較單純，只是想讓所有的 client 都能 tunnel 到 server，然後從 server 對外連線，不是太在意 client 之間互相連線。
 
 ## 產生 Key Pair
 

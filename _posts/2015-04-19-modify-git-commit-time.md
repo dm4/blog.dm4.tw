@@ -5,13 +5,13 @@ tags: [git]
 redirect_from: /2015/04/19/modify-git-commit-time.html
 ---
 
-最近剛好需要更改 git repo 的 commit time ，研究了一下順便把它記錄下來。
+最近剛好需要更改 git repo 的 commit time，研究了一下順便把它記錄下來。
 
-首先需要知道的是，在 git 裡，因為 commit 是可以被修改的，在一個 commit 裡其實會記錄 **author** 和 **committer** ， **author** 就是寫 code 的人， **committer** 則是真正提交 code 的人，
+首先需要知道的是，在 git 裡，因為 commit 是可以被修改的，在一個 commit 裡其實會記錄 **author** 和 **committer**，**author** 就是寫 code 的人，**committer** 則是真正提交 code 的人，
 
-用法大概是：對某個你不是 maintainer 的 project ，你寫了一個新功能，然後用 `git format-patch` 生出了 patch ，接著你把這個 patch 送給 maintainer ，在 maintainer 決定採用你的 patch 之後，用 `git apply` 來採用你的 commit ，接著他再 `git commit` ， code 才進到 repo 裡，這個新 commit 的 **author** 就是你， **committer** 就是真的做 `git commit` 的那個 maintainer 。
+用法大概是：對某個你不是 maintainer 的 project，你寫了一個新功能，然後用 `git format-patch` 生出了 patch，接著你把這個 patch 送給 maintainer，在 maintainer 決定採用你的 patch 之後，用 `git apply` 來採用你的 commit，接著他再 `git commit`，code 才進到 repo 裡，這個新 commit 的 **author** 就是你，**committer** 就是真的做 `git commit` 的那個 maintainer。
 
-為什麼改 commit 時間，會要知道 git 裡的 author 和 committer 呢？因為在更改 commit 時間時，如果沒有特別注意的話，會只改到 commit time ，並且該 commit 的 committer 會變成自己，原本的 author 資訊和 author time 會保留下來，所以如果不想讓人發現曾經改過 commit 的話，必須把 committer 設成原本的 author ，也要把 author time 改成想要的 commit time 。
+為什麼改 commit 時間，會要知道 git 裡的 author 和 committer 呢？因為在更改 commit 時間時，如果沒有特別注意的話，會只改到 commit time，並且該 commit 的 committer 會變成自己，原本的 author 資訊和 author time 會保留下來，所以如果不想讓人發現曾經改過 commit 的話，必須把 committer 設成原本的 author，也要把 author time 改成想要的 commit time。
 
 知道這些之後大概就沒問題了，可以用 `git filter-branch` (http://git-scm.com/docs/git-filter-branch) 來做：
 
@@ -98,5 +98,5 @@ CommitDate: Mon Jan 19 16:49:02 2015 +0000
     add script
 ```
 
-這裡可以看到雖然只改了 `add script` 的 commit ，但是連 `add README` 的 commit id 也變了，這是因為 git 在算 hash 的時候，也會包含 parent 的 commit id ，所以 parent 的 commit id 變了，所有的 child commit id 都會跟著變，這個在寫 script 批次處理的時候需要注意一下。
+這裡可以看到雖然只改了 `add script` 的 commit，但是連 `add README` 的 commit id 也變了，這是因為 git 在算 hash 的時候，也會包含 parent 的 commit id，所以 parent 的 commit id 變了，所有的 child commit id 都會跟著變，這個在寫 script 批次處理的時候需要注意一下。
 

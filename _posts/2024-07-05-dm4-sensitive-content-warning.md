@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "「 dm4 」含有敏感詞彙，請修改！"
+title: "「dm4」含有敏感詞彙，請修改！"
 --- 
 
 {% include image.md name="dm4.gif" %}

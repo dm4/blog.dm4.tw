@@ -7,11 +7,11 @@ title: "我怎麼整理音樂 (2) - XLD"
 
 確定手上的 CD 都在 [MusicBrainz] 上面有資料就可以開始轉檔啦！
 
-因為我主要都在 macOS 上作業，所以是用 [XLD] 來轉檔，用 Windows 的話或許可以試試 [EAC] ，不過我不太熟就是了。
+因為我主要都在 macOS 上作業，所以是用 [XLD] 來轉檔，用 Windows 的話或許可以試試 [EAC]，不過我不太熟就是了。
 
 [XLD] 其實能設定的選項也不多，在巴哈上找到的這篇就已經講的足夠詳細了：
 
-- [【密技】取得 CD-FLAC+100%LOG+CUE 教學(XLD配置教學)](https://home.gamer.com.tw/artwork.php?sn=5394112)
+- [【密技】取得 CD-FLAC+100%LOG+CUE 教學(XLD 配置教學)](https://home.gamer.com.tw/artwork.php?sn=5394112)
 
 不過因為文章是 2021 年的，新版本在介面上略有不同，可能有些需要找一下，一樣來分享我的使用心得：
 
@@ -35,11 +35,11 @@ All Tracks
         Damaged sector count                 : 0
 ```
 
-沒意外的話通常都會是 0 ，如果太多錯誤可能就要注意一下 CD 是不是有髒汙，或是已經有刮傷了 😢
+沒意外的話通常都會是 0，如果太多錯誤可能就要注意一下 CD 是不是有髒汙，或是已經有刮傷了 😢
 
 #### AccurateRip
 
-Log 裡面有一段 `AccurateRip Summary` ，是會把每首歌都算出 signature ，然後和轉過同一張 CD 比較，不過比較可惜的是 [XLD] 可以去抓 AccurateRip 資料庫的內容，但好像不能幫忙上傳新資訊？
+Log 裡面有一段 `AccurateRip Summary`，是會把每首歌都算出 signature，然後和轉過同一張 CD 比較，不過比較可惜的是 [XLD] 可以去抓 AccurateRip 資料庫的內容，但好像不能幫忙上傳新資訊？
 
 在 [AccurateRip Software](https://www.accuraterip.com/software.htm) 上面的 macOS 軟體除了 [XLD] 的連結都失效，要幫忙上傳 AccurateRip 資料可能要靠 [dBpoweramp](http://www.dbpoweramp.com/dmc.htm) 或 [EAC] 了。
 
@@ -67,7 +67,7 @@ AccurateRip Summary (DiscID: 0028436c-02021af7-06100d12)
         ->All tracks accurately ripped.
 ```
 
-裡面的 `confidence 400/818` 是指這曲歌有 818 個人上傳過 signature ，有 400 個人和你轉出來的 signature 一樣，通常這裡只要 > 0 我覺得就可以安心了，畢竟要有人轉壞，還要壞軌的地方和你一樣也不容易？
+裡面的 `confidence 400/818` 是指這曲歌有 818 個人上傳過 signature，有 400 個人和你轉出來的 signature 一樣，通常這裡只要 > 0 我覺得就可以安心了，畢竟要有人轉壞，還要壞軌的地方和你一樣也不容易？
 
 不過更多的時候會長下面這樣就是了……
 
@@ -78,11 +78,11 @@ AccurateRip Summary
 
 #### Copy Control CD
 
-就是一種內建防拷貝系統的 CD ，可以參考[維基的說明](https://zh.wikipedia.org/zh-tw/Copy_Control) 。
+就是一種內建防拷貝系統的 CD，可以參考[維基的說明](https://zh.wikipedia.org/zh-tw/Copy_Control)。
 
-到目前我只轉過一張 Copy Control CD ，一樣設定的 [XLD] 轉了四五個小時，轉出來的 log 裡顯示一堆錯誤， AccurateRip 也沒有比對成功，不過最後的音樂檔案播起來都是正常的，我目前還搞不太懂……
+到目前我只轉過一張 Copy Control CD，一樣設定的 [XLD] 轉了四五個小時，轉出來的 log 裡顯示一堆錯誤，AccurateRip 也沒有比對成功，不過最後的音樂檔案播起來都是正常的，我目前還搞不太懂……
 
-全部 NG 的 AccurateRip ：
+全部 NG 的 AccurateRip：
 
 ```text
 AccurateRip Summary (DiscID: 001f8a3d-013d6694-ca11560e)
@@ -102,7 +102,7 @@ AccurateRip Summary (DiscID: 001f8a3d-013d6694-ca11560e)
         ->0 track accurately ripped, 13 tracks not
 ```
 
-轉出來超多 error ：
+轉出來超多 error：
 
 ```text
 All Tracks
@@ -117,7 +117,7 @@ All Tracks
 
 #### TOC
 
-在 log 最前面可以看到 CD 的 TOC ，裡面包含了 CD 裡每首歌從 start / end sector 可以知道歌曲在 CD 裡的開始位置以及歌曲長度，大部份比較兩張 CD 是不是同一張都是用 TOC 的資訊。
+在 log 最前面可以看到 CD 的 TOC，裡面包含了 CD 裡每首歌從 start / end sector 可以知道歌曲在 CD 裡的開始位置以及歌曲長度，大部份比較兩張 CD 是不是同一張都是用 TOC 的資訊。
 
 ```text
 TOC of the extracted CD
@@ -133,19 +133,19 @@ TOC of the extracted CD
         8  | 20:56:38 | 03:27:66 |     94238    |   109828
 ```
 
-不過可以想見 TOC 其實是有機會有重覆的，特別是在單曲 CD 裡，所以也只是做個參考。 TOC 的資訊在算 disc ID 的時候會用到。
+不過可以想見 TOC 其實是有機會有重覆的，特別是在單曲 CD 裡，所以也只是做個參考。TOC 的資訊在算 disc ID 的時候會用到。
 
 #### Disc ID
 
-用 [MusicBrainz Picard][Picard] 可以從光碟機或是 [XLD] / [EAC] 轉檔時的 log 來拿到 disc ID ，不過就為了用他的這個小功能而裝整個 [Picard] 實在是有點太麻煩，看了一下其實用到的 code 在：
+用 [MusicBrainz Picard][Picard] 可以從光碟機或是 [XLD] / [EAC] 轉檔時的 log 來拿到 disc ID，不過就為了用他的這個小功能而裝整個 [Picard] 實在是有點太麻煩，看了一下其實用到的 code 在：
 
 - [picard/disc/utils.py](https://github.com/metabrainz/picard/blob/master/picard/disc/utils.py)
 - [picard/disc/eaclog.py](https://github.com/metabrainz/picard/blob/master/picard/disc/eaclog.py)
 - [picard/util/\_\_init\_\_.py](https://github.com/metabrainz/picard/blob/master/picard/util/__init__.py)
 
-後來就拼拼湊湊弄了一個獨立的 script 來做， dependency 就只有 [discid](https://pypi.org/project/discid/) ，放在這裡： [xldlog.py](https://gist.github.com/dm4/dbf0b7d3fc383fa3384ef6f797df20dd) 。
+後來就拼拼湊湊弄了一個獨立的 script 來做，dependency 就只有 [discid](https://pypi.org/project/discid/)，放在這裡：[xldlog.py](https://gist.github.com/dm4/dbf0b7d3fc383fa3384ef6f797df20dd)。
 
-（雖然叫 `xldlog.py` 但也是可以處理 [EAC] log 啦 😅 ）
+（雖然叫 `xldlog.py` 但也是可以處理 [EAC] log 啦 😅）
 
 跑起來大概長這樣：
 

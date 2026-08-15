@@ -3,7 +3,7 @@ layout: post
 title: "用 WezTerm 的 Escape Sequence 來開啟網頁"
 ---
 
-之前在 [用 iTerm2 的 Escape Sequence 來開啟網頁](/iterm2-escape-sequence-to-open-url) 裡要解決的問題，在換到 [WezTerm](https://wezfurlong.org/wezterm/) 之後一樣要再處理一次， WezTerm 雖然不像 iTerm 可以用 OSC 1337 直接 OpenURL ，但可以用 OSC 1337 來 `SetUserVar` ，並且會觸發 `user-var-changed` [^1] 事件。
+之前在 [用 iTerm2 的 Escape Sequence 來開啟網頁](/iterm2-escape-sequence-to-open-url) 裡要解決的問題，在換到 [WezTerm](https://wezfurlong.org/wezterm/) 之後一樣要再處理一次，WezTerm 雖然不像 iTerm 可以用 OSC 1337 直接 OpenURL，但可以用 OSC 1337 來 `SetUserVar`，並且會觸發 `user-var-changed` [^1] 事件。
 
 所以只要接下來只要自己處理好打開連結的部份就好了：
 
@@ -18,7 +18,7 @@ wezterm.on(
 )
 ```
 
-相對應的 `wezterm-open-url.sh` （可以參考 [get_user_vars](https://wezfurlong.org/wezterm/config/lua/pane/get_user_vars.html) ）：
+相對應的 `wezterm-open-url.sh`（可以參考 [get_user_vars](https://wezfurlong.org/wezterm/config/lua/pane/get_user_vars.html)）：
 
 ```bash
 #!/bin/bash

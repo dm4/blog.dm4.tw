@@ -5,11 +5,11 @@ tags: [phantomjs, javascript, nodejs]
 redirect_from: /2014/05/11/my-first-experience-with-phantomjs.html
 ---
 
-最近因為想要爬個網頁資料，結果礙於處理不了萬惡的 `__VIEWSTATE` 和 `__EVENTVALIDATION` ，在時間的壓力下就決定改用 ggm 推薦 [PhantomJS][1] ，一用之下驚為天人啊，太神了！
+最近因為想要爬個網頁資料，結果礙於處理不了萬惡的 `__VIEWSTATE` 和 `__EVENTVALIDATION`，在時間的壓力下就決定改用 ggm 推薦 [PhantomJS][1]，一用之下驚為天人啊，太神了！
 
-[PhantomJS][1] 概念就是在裡面跑一個 Webkit ，然後讓你用 JavaScript 控制它，所以可以模擬瀏覽器載入網頁之後 inject script / evaluate script / screenshot 的動作，官方文件也有寫到可以拿來作 web 的 testing ，模擬瀏覽、點擊之類的瀏覽器操作。
+[PhantomJS][1] 概念就是在裡面跑一個 Webkit，然後讓你用 JavaScript 控制它，所以可以模擬瀏覽器載入網頁之後 inject script / evaluate script / screenshot 的動作，官方文件也有寫到可以拿來作 web 的 testing，模擬瀏覽、點擊之類的瀏覽器操作。
 
-官網的 [Quick Start](http://phantomjs.org/quick-start.html) 寫的蠻清楚的， [Examples](http://phantomjs.org/examples/index.html) 也有很多範例可以參考，我自己用到的功能只有連線一個網頁後，對網頁的 `document` 作操作，然後把結果印出來，下面這段簡單的 code 就是連上 <http://blog.dm4.tw> 首頁，拿到最新一篇文章的標題，印出標題之後截圖：
+官網的 [Quick Start](http://phantomjs.org/quick-start.html) 寫的蠻清楚的，[Examples](http://phantomjs.org/examples/index.html) 也有很多範例可以參考，我自己用到的功能只有連線一個網頁後，對網頁的 `document` 作操作，然後把結果印出來，下面這段簡單的 code 就是連上 <http://blog.dm4.tw> 首頁，拿到最新一篇文章的標題，印出標題之後截圖：
 
 ```javascript
 var page = require('webpage').create();
@@ -26,7 +26,7 @@ page.open('http://blog.dm4.tw', function() {
 
 ## PhantomJS + Node.js
 
-可以用 <https://github.com/Medium/phantomjs> ，裡面也有提到怎麼用 `node` 跑起來：
+可以用 <https://github.com/Medium/phantomjs>，裡面也有提到怎麼用 `node` 跑起來：
 
 ```javascript
 var path = require('path')
@@ -58,7 +58,7 @@ childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
 
 ### 打不開 https 的網頁
 
-有些 https 網頁憑證沒設好，預設很貼心把它擋下來了，如果要打開的話，執行時要加上參數 `phantomjs --ignore-ssl-errors=true` ，如果是用 `node` 跑的話是要加在 arguments 裡：
+有些 https 網頁憑證沒設好，預設很貼心把它擋下來了，如果要打開的話，執行時要加上參數 `phantomjs --ignore-ssl-errors=true`，如果是用 `node` 跑的話是要加在 arguments 裡：
 
 ```javascript
 var childArgs = [

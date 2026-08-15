@@ -3,7 +3,7 @@ layout: post
 title: "在 macOS 下調整輸出音訊的取樣率 (Sample Rate) 和位元深度 (Bit Depth)"
 ---
 
-在 macOS 裡，接上了比較好的外接音效卡 / DAC 之後，記得要打開 **應用程式 → 工具程式 → 音訊MIDI設定** ，在裡面設定一下取樣率和位元深度：
+在 macOS 裡，接上了比較好的外接音效卡 / DAC 之後，記得要打開 **應用程式 → 工具程式 → 音訊 MIDI 設定**，在裡面設定一下取樣率和位元深度：
 
 {% include image.md name="settings.png" %}
 

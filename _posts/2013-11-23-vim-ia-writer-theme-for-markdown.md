@@ -9,7 +9,7 @@ redirect_from: /2013/11/23/vim-ia-writer-theme-for-markdown.html
 ，試了之後覺得超棒的，決定以後的 markdown editor 就用 MacVim 了！
 
 接著就查了一下 vim 的 ftplugin 大概怎麼做，然後因為寫 octopress
-要用，所以也找了一下 Jekyll 的 YAML header syntax ，包一包就上傳啦！成品在
+要用，所以也找了一下 Jekyll 的 YAML header syntax，包一包就上傳啦！成品在
 [dm4/vim-writer][2]。
 
 Screenshot:

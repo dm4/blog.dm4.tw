@@ -16,7 +16,7 @@ ffprobe -show_entries stream=sample_rate,bit_rate,bits_per_raw_sample <file>
 ffprobe -v error -show_entries stream=sample_rate,bit_rate,bits_per_raw_sample <file>
 ```
 
-其中的 `bits_per_raw_sample` 就是位元深度 (bit depth) ，而 `bit_rate` 是位元率，位元率的單位是 bit per second (bps) ，像一個 FLAC 檔案的結果可能是：
+其中的 `bits_per_raw_sample` 就是位元深度 (bit depth)，而 `bit_rate` 是位元率，位元率的單位是 bit per second (bps)，像一個 FLAC 檔案的結果可能是：
 
 ```text
 [STREAM]
@@ -26,7 +26,7 @@ bits_per_raw_sample=16
 [/STREAM]
 ```
 
-不過如果 AAC 格式的檔案，因為是有損的壓縮編碼，所以並沒有固定的 bit depth ，指令的執行結果可能會長這樣：
+不過如果 AAC 格式的檔案，因為是有損的壓縮編碼，所以並沒有固定的 bit depth，指令的執行結果可能會長這樣：
 
 ```text
 [STREAM]

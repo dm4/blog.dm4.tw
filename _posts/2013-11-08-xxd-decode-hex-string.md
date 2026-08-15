@@ -12,7 +12,7 @@ $ perl -ne 'print map chr hex, m/../g' <<< 646d340a
 dm4
 ```
 
-不過昨天又研究了一下 `xxd` 發現一些神秘的功能，像是發現有 C style 的 output ！
+不過昨天又研究了一下 `xxd` 發現一些神秘的功能，像是發現有 C style 的 output！
 
 ```
 $ xxd -i data

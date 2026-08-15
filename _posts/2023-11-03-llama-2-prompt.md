@@ -5,9 +5,9 @@ tags: [ai]
 redirect_from: /2023/11/03/llama-2-prompt.html
 ---
 
-如果不透過任何 wrapper ，直接操作 Llama2 的話，想要做到 system prompt 或是歷史對話的效果，其實是要用特殊的格式來建構 prompt 。
+如果不透過任何 wrapper，直接操作 Llama2 的話，想要做到 system prompt 或是歷史對話的效果，其實是要用特殊的格式來建構 prompt。
 
-根據 [這篇 Hugging Face 的文章](https://huggingface.co/blog/llama2#how-to-prompt-llama-2) ，可以知道格式如下：
+根據 [這篇 Hugging Face 的文章](https://huggingface.co/blog/llama2#how-to-prompt-llama-2)，可以知道格式如下：
 
 ```text
 <s>[INST] <<SYS>>
