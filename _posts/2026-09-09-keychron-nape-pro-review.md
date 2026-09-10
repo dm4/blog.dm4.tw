@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Keychron Nape Pro 使用心得"
+ogimage: "keyboard-with-nape-pro.jpg"
 ---
 
 {% include image.md name="keyboard-with-nape-pro.jpg" alt="keyboard-with-nape-pro" %}
@@ -34,7 +35,7 @@ title: "Keychron Nape Pro 使用心得"
 用起來和遙控器一樣（雖然平常是不會拿起來按啦）：
 
 <video controls width="100%">
-  <source src="/assets/images/keychron-nape-pro/nape-pro-m1ddc.mp4" type="video/mp4">
+  <source src="/assets/images/keychron-nape-pro-review/nape-pro-m1ddc.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
